@@ -1,14 +1,14 @@
 {
   "name": "面向对象的程序设计",
   "short_name": "面向对象的程序设计",
-  "start_url": "/Java-HomeWork/",
-  "scope": "/Java-HomeWork/",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/Java-HomeWork/favicon.svg",
+      "src": "/favicon.svg",
       "sizes": "512x512"
     }
   ]

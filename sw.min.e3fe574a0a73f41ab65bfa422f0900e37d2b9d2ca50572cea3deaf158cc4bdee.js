@@ -1,1 +1,0 @@
-navigator.serviceWorker&&navigator.serviceWorker.register("/Java-HomeWork/sw.js",{scope:"/Java-HomeWork/"})
