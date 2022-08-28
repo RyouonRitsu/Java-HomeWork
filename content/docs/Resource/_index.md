@@ -12,6 +12,4 @@ weight: 300
 
 [Java17 API 文档](https://docs.oracle.com/en/java/javase/17/docs/api/index.html)
 
-[CTS的核酸检测证明文件](https://bhpan.buaa.edu.cn:443/link/AED2B7D2568D3AAE55D84895D487EA95)
-
 （如果在完成作业的时候发现了有用的资源 / 写的不错的博客， 也可以联系 HZY 加到这个页面上）
