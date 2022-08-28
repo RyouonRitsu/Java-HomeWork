@@ -29,7 +29,7 @@ enableGitInfo = true
 # [[menu.before]]
 [[menu.after]]
   name = "Github"
-  url = "https://github.com/Super-BUAA-2021/Java-HomeWork"
+  url = "https://github.com/RyouonRitsu/Java-HomeWork"
   weight = 10
 
 [params]
