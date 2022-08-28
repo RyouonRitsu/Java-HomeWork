@@ -12,4 +12,4 @@ weight: 300
 
 [Java17 API 文档](https://docs.oracle.com/en/java/javase/17/docs/api/index.html)
 
-（如果在完成作业的时候发现了有用的资源 / 写的不错的博客， 也可以联系 HZY 加到这个页面上）
+（如果在完成作业的时候发现了有用的资源 / 写的不错的博客， 也可以联系 ZHX 加到这个页面上）
