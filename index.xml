@@ -8,5 +8,6 @@
 Java 8 # Interface # interface 的设计初衷是面向抽象，提高扩展性。这也留有一点遗憾，interface 修改的时候，实现它的类也必须跟着改。
 为了解决接口的修改与现有的实现不兼容的问题。新 interface 的方法可以用 default 或 static 修饰，这样就可以有方法体，实现类也不必重写此方法。
 一个 interface 中可以有多个方法被它们修饰，这 2 个修饰符的区别主要也是普通方法和静态方法的区别。
-default 修饰的方法，是普通实例方法，可以用this调用，可以被子类继承、重写。 static 修饰的方法，使用上和一般类静态方法一样。但它不能被子类继承，只能用Interface调用。 我们来看一个实际的例子。
+default 修饰的方法，是普通实例方法，可以用this调用，可以被子类继承、重写。
+static 修饰的方法，使用上和一般类静态方法一样。但它不能被子类继承，只能用Interface调用。 我们来看一个实际的例子。
 public interface InterfaceNew { static void sm() { System.out.println(&amp;#34;interface提供的方式实现&amp;#34;); } static void sm2() { System.out.println(&amp;#34;interface提供的方式实现&amp;#34;); } default void def() { System.out.println(&amp;#34;interface default方法&amp;#34;); } default void def2() { System.out.println(&amp;#34;interface default2方法&amp;#34;); } //须要实现类重写 void f(); } public interface InterfaceNew1 { default void def() { System.</description></item></channel></rss>
