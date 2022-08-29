@@ -125,7 +125,7 @@ int i = 0;
 Collections.sort(strings, (Integer o1, Integer o2) -> o1 - i);
 ```
 
-lambda 表达式可以引用外边变量，但是该变量默认拥有 final 属性，不能被修改，如果修改，编译时就报错。
+lambda 表达式可以引用外部变量，但是该变量默认拥有 final 属性，不能被修改，如果修改，编译时就报错。
 
 ### 方法的引用
 
