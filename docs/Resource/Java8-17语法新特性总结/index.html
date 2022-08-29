@@ -13,7 +13,7 @@ Java 8 # Interface # interface 的设计初衷是面向抽象，提高扩展性�
 一个 interface 中可以有多个方法被它们修饰，这 2 个修饰符的区别主要也是普通方法和静态方法的区别。
 default 修饰的方法，是普通实例方法，可以用this调用，可以被子类继承、重写。 static 修饰的方法，使用上和一般类静态方法一样。但它不能被子类继承，只能用Interface调用。 我们来看一个实际的例子。
 public interface InterfaceNew { static void sm() { System.out.println(&#34;interface提供的方式实现&#34;); } static void sm2() { System.out.println(&#34;interface提供的方式实现&#34;); } default void def() { System.out.println(&#34;interface default方法&#34;); } default void def2() { System.out.println(&#34;interface default2方法&#34;); } //须要实现类重写 void f(); } public interface InterfaceNew1 { default void def() { System."><meta property="og:type" content="article"><meta property="og:url" content="https://ryouonritsu.github.io/Java-HomeWork/docs/Resource/Java8-17%E8%AF%AD%E6%B3%95%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/"><meta property="article:section" content="docs"><title>Java8 17语法新特性总结 | 面向对象的程序设计</title><link rel=manifest href=/Java-HomeWork/manifest.json><link rel=icon href=/Java-HomeWork/favicon.png type=image/x-icon><link rel=stylesheet href=/Java-HomeWork/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css integrity="sha256-gsXb0jRHzuC0wqo+0Izglh+qQOH6Nw7uT4yfAuDUa18=" crossorigin=anonymous><script defer src=/Java-HomeWork/flexsearch.min.js></script>
-<script defer src=/Java-HomeWork/en.search.min.ce5b4fe3c756fe20520b838ef9c12c9e5c7d98830d8f16ad07cb6c4968ba1fe0.js integrity="sha256-zltP48dW/iBSC4OO+cEsnlx9mIMNjxatB8tsSWi6H+A=" crossorigin=anonymous></script>
+<script defer src=/Java-HomeWork/en.search.min.5fd11037d60b1b49c686890b529f671320afac6cbfcbab8edc333513fe557fc5.js integrity="sha256-X9EQN9YLG0nGhokLUp9nEyCvrGy/y6uO3DM1E/5Vf8U=" crossorigin=anonymous></script>
 <script defer src=/Java-HomeWork/sw.min.f9d6a999699a3b48a5eb200be51ffe46d9f4e077c31bf4122a23051ca7b6bc92.js integrity="sha256-+dapmWmaO0il6yAL5R/+Rtn04HfDG/QSKiMFHKe2vJI=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/Java-HomeWork/><span>面向对象的程序设计</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/Java-HomeWork/docs/OOP-LAB/>Oop Lab</a><ul><li><a href=/Java-HomeWork/docs/OOP-LAB/TEMPLATE/>Template</a></li></ul></li><li><a href=/Java-HomeWork/docs/MySCS/>My Scs</a><ul></ul></li><li><a href=/Java-HomeWork/docs/Resource/>Resource</a><ul><li><a href=/Java-HomeWork/docs/Resource/Java8-17%E8%AF%AD%E6%B3%95%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/ class=active>Java8 17语法新特性总结</a></li></ul></li></ul><ul><li><a href=https://github.com/RyouonRitsu/Java-HomeWork target=_blank rel=noopener>Github</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/Java-HomeWork/svg/menu.svg class=book-icon alt=Menu></label>
 <strong>Java8 17语法新特性总结</strong>
@@ -125,15 +125,7 @@ public interface InterfaceNew { static void sm() { System.out.println(&#34;inter
 </span></span><span style=display:flex><span>    <span style=color:#f92672>}</span>
 </span></span><span style=display:flex><span><span style=color:#f92672>}</span>
 </span></span></code></pre></div><h3 id=optional>Optional
-<a class=anchor href=#optional>#</a></h3><blockquote><p>防止 NPE，是程序员的基本修养，注意 NPE 产生的场景：
-1） 返回类型为基本数据类型，return 包装数据类型的对象时，自动拆箱有可能产生 NPE。
-反例：public int f() { return Integer 对象 }， 如果为 null，自动解箱抛 NPE。
-2） 数据库的查询结果可能为 null。
-3） 集合里的元素即使 isNotEmpty，取出的数据元素也可能为 null。
-4） 远程调用返回对象时，一律要求进行空指针判断，防止 NPE。
-5） 对于 Session 中获取的数据，建议进行 NPE 检查，避免空指针。
-6） 级联调用 obj.getA().getB().getC()；一连串调用，易产生 NPE。
-正例：使用 JDK8 的 Optional 类来防止 NPE 问题。</p></blockquote><h4 id=如何创建一个-optional>如何创建一个 Optional
+<a class=anchor href=#optional>#</a></h3><blockquote><p>防止 NPE，是程序员的基本修养，注意 NPE 产生的场景：<br>1） 返回类型为基本数据类型，return 包装数据类型的对象时，自动拆箱有可能产生 NPE。<br>反例：public int f() { return Integer 对象 }， 如果为 null，自动解箱抛 NPE。<br>2） 数据库的查询结果可能为 null。<br>3） 集合里的元素即使 isNotEmpty，取出的数据元素也可能为 null。<br>4） 远程调用返回对象时，一律要求进行空指针判断，防止 NPE。<br>5） 对于 Session 中获取的数据，建议进行 NPE 检查，避免空指针。<br>6） 级联调用 obj.getA().getB().getC()；一连串调用，易产生 NPE。<br>正例：使用 JDK8 的 Optional 类来防止 NPE 问题。</p></blockquote><h4 id=如何创建一个-optional>如何创建一个 Optional
 <a class=anchor href=#%e5%a6%82%e4%bd%95%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa-optional>#</a></h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>/**
 </span></span></span><span style=display:flex><span><span style=color:#75715e>* Common instance for {@code empty()}. 全局EMPTY对象
 </span></span></span><span style=display:flex><span><span style=color:#75715e>*/</span>
@@ -645,7 +637,7 @@ Java 13 支持两个 <code>"""</code> 符号中间的任何内容都会被解释
 </span></span></code></pre></div><h2 id=java-16>Java 16
 <a class=anchor href=#java-16>#</a></h2><h3 id=记录类型>记录类型
 <a class=anchor href=#%e8%ae%b0%e5%bd%95%e7%b1%bb%e5%9e%8b>#</a></h3><p>Java 14 引入 <code>record</code> 关键字， <code>record</code> 提供一种紧凑的语法来定义类中的不可变数据。
-<code>record</code> 关键字可以简化 数据类（一个 Java 类一旦实例化就不能再修改）的定义方式，使用 <code>record</code> 代替 <code>class</code> 定义的类，只需要声明属性，就可以在获得属性的访问方法，以及 <code>toString()</code> ， <code>hashCode()</code>， <code>equals()</code> 方法
+<code>record</code> 关键字可以简化数据类（一个 Java 类一旦实例化就不能再修改）的定义方式，使用 <code>record</code> 代替 <code>class</code> 定义的类，只需要声明属性，就可以在获得属性的访问方法，以及 <code>toString()</code> ， <code>hashCode()</code>， <code>equals()</code> 方法
 类似于使用 <code>class</code> 定义类，同时使用了 lombok 插件，并打上了 <code>@Getter</code> , <code>@ToString</code> ， <code>@EqualsAndHashCode</code> 注解</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>/**
 </span></span></span><span style=display:flex><span><span style=color:#75715e> * 这个类具有两个特征
 </span></span></span><span style=display:flex><span><span style=color:#75715e> * 1. 所有成员属性都是final
