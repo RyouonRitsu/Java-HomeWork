@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>面向对象的程序设计</title><link>https://ryouonritsu.github.io/Java-HomeWork/docs/Resource/</link><description>Recent content on 面向对象的程序设计</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://ryouonritsu.github.io/Java-HomeWork/docs/Resource/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://ryouonritsu.github.io/Java-HomeWork/docs/Resource/Java8-17%E8%AF%AD%E6%B3%95%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ryouonritsu.github.io/Java-HomeWork/docs/Resource/Java8-17%E8%AF%AD%E6%B3%95%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/</guid><description>Java8-17语法新特性总结 # 班级：202115
 学号：19377054
 姓名：周洪熙
-[toc]
-Java 8 # Interface # interface 的设计初衷是面向抽象，提高扩展性。这也留有一点遗憾，Interface 修改的时候，实现它的类也必须跟着改。
+Java 8 # Interface # interface 的设计初衷是面向抽象，提高扩展性。这也留有一点遗憾，interface 修改的时候，实现它的类也必须跟着改。
 为了解决接口的修改与现有的实现不兼容的问题。新 interface 的方法可以用 default 或 static 修饰，这样就可以有方法体，实现类也不必重写此方法。
 一个 interface 中可以有多个方法被它们修饰，这 2 个修饰符的区别主要也是普通方法和静态方法的区别。
 default 修饰的方法，是普通实例方法，可以用this调用，可以被子类继承、重写。 static 修饰的方法，使用上和一般类静态方法一样。但它不能被子类继承，只能用Interface调用。 我们来看一个实际的例子。
