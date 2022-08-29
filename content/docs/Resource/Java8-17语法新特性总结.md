@@ -22,6 +22,7 @@ interface 的设计初衷是面向抽象，提高扩展性。这也留有一点�
 一个 interface 中可以有多个方法被它们修饰，这 2 个修饰符的区别主要也是普通方法和静态方法的区别。
 
 `default` 修饰的方法，是普通实例方法，可以用this调用，可以被子类继承、重写。
+
 `static` 修饰的方法，使用上和一般类静态方法一样。但它不能被子类继承，只能用Interface调用。
 我们来看一个实际的例子。
 
@@ -222,7 +223,7 @@ public static <T> T requireNonNull(T obj) {
 }
 ```
 
-`ofNullable` 方法和 `of` 方法唯一区别就是当 value 为 null 时， `ofNullable` 返回的是EMPTY， `of` 会抛出 `NullPointerException` 异常。如果需要把 `NullPointerException` 暴漏出来就用 `of` ，否则就用 `ofNullable` 。
+`ofNullable` 方法和 `of` 方法唯一区别就是当 value 为 null 时， `ofNullable` 返回的是EMPTY， `of` 会抛出 `NullPointerException` 异常。如果需要把 `NullPointerException` 暴露出来就用 `of` ，否则就用 `ofNullable` 。
 
 #### map()相关方法
 
@@ -907,7 +908,9 @@ c++ php
 ### 记录类型
 
 Java 14 引入 `record` 关键字， `record` 提供一种紧凑的语法来定义类中的不可变数据。
-`record` 关键字可以简化数据类（一个 Java 类一旦实例化就不能再修改）的定义方式，使用 `record` 代替 `class` 定义的类，只需要声明属性，就可以在获得属性的访问方法，以及 `toString()` ， `hashCode()`， `equals()` 方法
+
+`record` 关键字可以简化数据类（一个 Java 类一旦实例化就不能再修改）的定义方式，使用 `record` 代替 `class` 定义的类，只需要声明属性，就可以在获得属性的访问方法，以及 `toString()` ， `hashCode()`， `equals()` 方法。
+
 类似于使用 `class` 定义类，同时使用了 lombok 插件，并打上了 `@Getter` , `@ToString` ， `@EqualsAndHashCode` 注解
 
 ```java
@@ -938,6 +941,7 @@ record Rectangle(float length, float width) { }
 ```
 
 Java 15 支持在局部方法和接口中使用 `record` 。
+
 Java 16 中非静态内部类可以定义非常量的静态成员。
 
 ```java
@@ -951,7 +955,9 @@ public class Outer {
 ### instanceof 模式匹配
 
 Java 12 首次引入 instanceof 模式匹配。
+
 Java 13, 14, 15 相比较上个版本无变化，继续收集更多反馈。
+
 Java 16 模式变量不再隐式为 final。
 
 新版的 instanceof 可以在判断是否属于具体的类型同时完成转换。
@@ -998,11 +1004,13 @@ public non-sealed class Manager extends Person {
 ```
 
 如果允许扩展的子类和封闭类在同一个源代码文件里，封闭类可以不使用 permits 语句，Java 编译器将检索源文件，在编译期为封闭类添加上许可的子类。
+
 在 JDK 15 引入的 sealed class（密封类）在 JDK 16 得到了改进：更加严格的引用检查和密封类的继承关系。
 
 ### Stream.toList()
 
 如果需要将 `Stream` 转换成 `List` ,需要通过调用 `collect` 方法使用 `Collectors.toList()` ，代码非常冗长。
+
 在Java 17中将会变得简单，可以直接调用 `toList()` 。
 
 ```java
