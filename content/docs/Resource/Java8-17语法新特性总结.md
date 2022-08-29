@@ -11,13 +11,11 @@ math: true
 >
 > 姓名：周洪熙
 
-[toc]
-
 ## Java 8
 
 ### Interface
 
-interface 的设计初衷是面向抽象，提高扩展性。这也留有一点遗憾，Interface 修改的时候，实现它的类也必须跟着改。
+interface 的设计初衷是面向抽象，提高扩展性。这也留有一点遗憾，interface 修改的时候，实现它的类也必须跟着改。
 
 为了解决接口的修改与现有的实现不兼容的问题。新 interface 的方法可以用 `default` 或 `static` 修饰，这样就可以有方法体，实现类也不必重写此方法。
 
@@ -168,7 +166,7 @@ public class LambdaClass extends LambdaClassSuper {
 
 > 防止 NPE，是程序员的基本修养，注意 NPE 产生的场景：
 > 1） 返回类型为基本数据类型，return 包装数据类型的对象时，自动拆箱有可能产生 NPE。
-> 反例：public int f() { return Integer 对象}， 如果为 null，自动解箱抛 NPE。
+> 反例：public int f() { return Integer 对象 }， 如果为 null，自动解箱抛 NPE。
 > 2） 数据库的查询结果可能为 null。
 > 3） 集合里的元素即使 isNotEmpty，取出的数据元素也可能为 null。
 > 4） 远程调用返回对象时，一律要求进行空指针判断，防止 NPE。
