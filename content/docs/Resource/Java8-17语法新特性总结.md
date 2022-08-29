@@ -164,14 +164,14 @@ public class LambdaClass extends LambdaClassSuper {
 
 ### Optional
 
-> 防止 NPE，是程序员的基本修养，注意 NPE 产生的场景：
-> 1） 返回类型为基本数据类型，return 包装数据类型的对象时，自动拆箱有可能产生 NPE。
-> 反例：public int f() { return Integer 对象 }， 如果为 null，自动解箱抛 NPE。
-> 2） 数据库的查询结果可能为 null。
-> 3） 集合里的元素即使 isNotEmpty，取出的数据元素也可能为 null。
-> 4） 远程调用返回对象时，一律要求进行空指针判断，防止 NPE。
-> 5） 对于 Session 中获取的数据，建议进行 NPE 检查，避免空指针。
-> 6） 级联调用 obj.getA().getB().getC()；一连串调用，易产生 NPE。
+> 防止 NPE，是程序员的基本修养，注意 NPE 产生的场景：\
+> 1） 返回类型为基本数据类型，return 包装数据类型的对象时，自动拆箱有可能产生 NPE。\
+> 反例：public int f() { return Integer 对象 }， 如果为 null，自动解箱抛 NPE。\
+> 2） 数据库的查询结果可能为 null。\
+> 3） 集合里的元素即使 isNotEmpty，取出的数据元素也可能为 null。\
+> 4） 远程调用返回对象时，一律要求进行空指针判断，防止 NPE。\
+> 5） 对于 Session 中获取的数据，建议进行 NPE 检查，避免空指针。\
+> 6） 级联调用 obj.getA().getB().getC()；一连串调用，易产生 NPE。\
 > 正例：使用 JDK8 的 Optional 类来防止 NPE 问题。
 
 #### 如何创建一个 Optional
@@ -907,7 +907,7 @@ c++ php
 ### 记录类型
 
 Java 14 引入 `record` 关键字， `record` 提供一种紧凑的语法来定义类中的不可变数据。
-`record` 关键字可以简化 数据类（一个 Java 类一旦实例化就不能再修改）的定义方式，使用 `record` 代替 `class` 定义的类，只需要声明属性，就可以在获得属性的访问方法，以及 `toString()` ， `hashCode()`， `equals()` 方法
+`record` 关键字可以简化数据类（一个 Java 类一旦实例化就不能再修改）的定义方式，使用 `record` 代替 `class` 定义的类，只需要声明属性，就可以在获得属性的访问方法，以及 `toString()` ， `hashCode()`， `equals()` 方法
 类似于使用 `class` 定义类，同时使用了 lombok 插件，并打上了 `@Getter` , `@ToString` ， `@EqualsAndHashCode` 注解
 
 ```java
