@@ -1,0 +1,126 @@
+<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="MySCS -1 # 同学们，从这周开始，我们会迭代完成一个MySCS，即从零开发的软件学院云平台（青春版）。
+我们每两周会增加一次新的需求，如，MySCS-1需要大家完成账号注册和登录系统，MySCS-2需要大家在1的基础上添加课程系统或其它系统等。
+编写好的代码需要大家用patpat评测，所有测试点都通过以后即可上传到云平台完成本次实验。希望大家认真完成哦！请勿抄袭，抄袭会被查到的（盯
+题目背景 # 软件学院云平台（青春版），即MySCS，是一款更加轻量化的命令行操作的云平台，屏幕前的你拥有完全自主知识产权，有极大的使用价值和收藏价值。
+MySCS分为教师端和学生端，可以实现传统scs的大部分功能，如教师端对课程的增删改查，对课程所属的实验的增删改查，教师还可以为课程添加学生和助教，学生可以查看参与的课程并提交实验作业，助教可以协同老师管理课程等。
+命令概览 # 命令行 功能 输出 QUIT 系统关机 &mdash;&ndash; Good Bye! &mdash;&ndash; register 学工号 名 姓 邮箱 密码 确认密码 注册 register success
+already logged in
+user id illegal
+user id duplication
+user name illegal
+email address illegal
+password illegal
+passwords inconsistent login 学工号 密码 登录 Hello 名~
+Hello Professor 姓~
+already logged in
+user id illegal
+user id not exist"><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="MySCS -1 # 同学们，从这周开始，我们会迭代完成一个MySCS，即从零开发的软件学院云平台（青春版）。
+我们每两周会增加一次新的需求，如，MySCS-1需要大家完成账号注册和登录系统，MySCS-2需要大家在1的基础上添加课程系统或其它系统等。
+编写好的代码需要大家用patpat评测，所有测试点都通过以后即可上传到云平台完成本次实验。希望大家认真完成哦！请勿抄袭，抄袭会被查到的（盯
+题目背景 # 软件学院云平台（青春版），即MySCS，是一款更加轻量化的命令行操作的云平台，屏幕前的你拥有完全自主知识产权，有极大的使用价值和收藏价值。
+MySCS分为教师端和学生端，可以实现传统scs的大部分功能，如教师端对课程的增删改查，对课程所属的实验的增删改查，教师还可以为课程添加学生和助教，学生可以查看参与的课程并提交实验作业，助教可以协同老师管理课程等。
+命令概览 # 命令行 功能 输出 QUIT 系统关机 &mdash;&ndash; Good Bye! &mdash;&ndash; register 学工号 名 姓 邮箱 密码 确认密码 注册 register success
+already logged in
+user id illegal
+user id duplication
+user name illegal
+email address illegal
+password illegal
+passwords inconsistent login 学工号 密码 登录 Hello 名~
+Hello Professor 姓~
+already logged in
+user id illegal
+user id not exist"><meta property="og:type" content="article"><meta property="og:url" content="https://ryouonritsu.github.io/Java-HomeWork/docs/MySCS/MySCS-1/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2022-09-15T18:52:54+08:00"><title>My Scs 1 | 面向对象的程序设计</title><link rel=manifest href=/Java-HomeWork/manifest.json><link rel=icon href=/Java-HomeWork/favicon.png type=image/x-icon><link rel=stylesheet href=/Java-HomeWork/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css integrity="sha256-gsXb0jRHzuC0wqo+0Izglh+qQOH6Nw7uT4yfAuDUa18=" crossorigin=anonymous><script defer src=/Java-HomeWork/flexsearch.min.js></script>
+<script defer src=/Java-HomeWork/en.search.min.72e2cb95b73aa0348bfd97324be6afb074b52a45803e898b388ed81d67763036.js integrity="sha256-cuLLlbc6oDSL/ZcyS+avsHS1KkWAPomLOI7YHWd2MDY=" crossorigin=anonymous></script>
+<script defer src=/Java-HomeWork/sw.min.f9d6a999699a3b48a5eb200be51ffe46d9f4e077c31bf4122a23051ca7b6bc92.js integrity="sha256-+dapmWmaO0il6yAL5R/+Rtn04HfDG/QSKiMFHKe2vJI=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/Java-HomeWork/><span>面向对象的程序设计</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/Java-HomeWork/docs/OOP-LAB/>Oop Lab</a><ul><li><a href=/Java-HomeWork/docs/OOP-LAB/LAB01/>Lab01</a></li><li><a href=/Java-HomeWork/docs/OOP-LAB/LAB02/>Lab02</a></li><li><a href=/Java-HomeWork/docs/OOP-LAB/TEMPLATE/>Template</a></li></ul></li><li><a href=/Java-HomeWork/docs/MySCS/>My Scs</a><ul><li><a href=/Java-HomeWork/docs/MySCS/MySCS-1/ class=active>My Scs 1</a></li></ul></li><li><a href=/Java-HomeWork/docs/Resource/>Resource</a><ul><li><a href=/Java-HomeWork/docs/Resource/Java8-17%E8%AF%AD%E6%B3%95%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/>Java8 17语法新特性总结</a></li></ul></li></ul><ul><li><a href=https://github.com/RyouonRitsu/Java-HomeWork target=_blank rel=noopener>Github</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/Java-HomeWork/svg/menu.svg class=book-icon alt=Menu></label>
+<strong>My Scs 1</strong>
+<label for=toc-control><img src=/Java-HomeWork/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#myscs--1>MySCS -1</a><ul><li><a href=#题目背景>题目背景</a></li><li><a href=#命令概览>命令概览</a></li><li><a href=#功能描述>功能描述</a><ul><li><ul><li><a href=#1开关机>1.开关机</a></li><li><a href=#2用户注册>2.用户注册</a></li><li><a href=#3用户登录>3.用户登录</a></li><li><a href=#3-用户登出>3. 用户登出</a></li><li><a href=#4打印信息>4.打印信息</a></li></ul></li></ul></li><li><a href=#输出优先级>输出优先级</a></li><li><a href=#hint>HINT</a></li><li><a href=#测试样例>测试样例</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=myscs--1>MySCS -1
+<a class=anchor href=#myscs--1>#</a></h1><p>同学们，从这周开始，我们会迭代完成一个MySCS，即从零开发的软件学院云平台（青春版）。</p><p>我们每两周会增加一次新的需求，如，MySCS-1需要大家完成账号注册和登录系统，MySCS-2需要大家在1的基础上添加课程系统或其它系统等。</p><p>编写好的代码需要大家用patpat评测，所有测试点都通过以后即可上传到云平台完成本次实验。希望大家认真完成哦！请勿抄袭，抄袭会被查到的（盯</p><h2 id=题目背景>题目背景
+<a class=anchor href=#%e9%a2%98%e7%9b%ae%e8%83%8c%e6%99%af>#</a></h2><p>软件学院云平台（青春版），即MySCS，是一款更加轻量化的命令行操作的云平台，屏幕前的你拥有完全自主知识产权，有极大的使用价值和收藏价值。</p><p>MySCS分为教师端和学生端，可以实现传统scs的大部分功能，如教师端对课程的增删改查，对课程所属的实验的增删改查，教师还可以为课程添加学生和助教，学生可以查看参与的课程并提交实验作业，助教可以协同老师管理课程等。</p><h2 id=命令概览>命令概览
+<a class=anchor href=#%e5%91%bd%e4%bb%a4%e6%a6%82%e8%a7%88>#</a></h2><table><thead><tr><th>命令行</th><th>功能</th><th>输出</th></tr></thead><tbody><tr><td>QUIT</td><td>系统关机</td><td>&mdash;&ndash; Good Bye! &mdash;&ndash;</td></tr><tr><td>register 学工号 名 姓 邮箱 密码 确认密码</td><td>注册</td><td>register success<br>already logged in<br>user id illegal<br>user id duplication<br>user name illegal<br>email address illegal<br>password illegal<br>passwords inconsistent</td></tr><tr><td>login 学工号 密码</td><td>登录</td><td>Hello 名~<br>Hello Professor 姓~<br>already logged in<br>user id illegal<br>user id not exist<br>wrong password</td></tr><tr><td>printInfo</td><td>打印本人信息</td><td>Name: 名 姓<br>ID: xxx<br>Type: Student（或Professor）<br>Email: xxx<br><br>login first</td></tr><tr><td>printInfo 学号</td><td>打印其他人信息</td><td>Name: 名 姓<br>ID: xxx<br>Type: Student（或Professor）<br>Email: xxx<br><br>login first<br>user id illegal<br>user id not exist<br>permission denied</td></tr><tr><td>logout</td><td>退出当前用户</td><td>Bye~<br>not logged in</td></tr></tbody></table><h2 id=功能描述>功能描述
+<a class=anchor href=#%e5%8a%9f%e8%83%bd%e6%8f%8f%e8%bf%b0>#</a></h2><h4 id=1开关机>1.开关机
+<a class=anchor href=#1%e5%bc%80%e5%85%b3%e6%9c%ba>#</a></h4><p>实现最基本的命令读入和退出功能</p><p>首先，你的任务是编写一个Test类：</p><ul><li>当程序启动，进入main方法，并连续读入输入的命令行，命令行的基本格式为：</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>命令 <span style=color:#f92672>[</span>参数1<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>参数2<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>参数3<span style=color:#f92672>]</span>
+</span></span></code></pre></div><p>其中参数数目为不定项；命令和参数，参数和参数之间由一个或多个空白符分隔；命令之前和最后一个参数之后可以没有或有若干个空白符。</p><p>当输入的某一行只有空白符，什么都不会输出。</p><ul><li>当终端输入 <code>QUIT</code> 时，系统退出（程序退出状态为0），并在终端打印一行字符：</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>----- Good Bye! -----
+</span></span></code></pre></div><h4 id=2用户注册>2.用户注册
+<a class=anchor href=#2%e7%94%a8%e6%88%b7%e6%b3%a8%e5%86%8c>#</a></h4><p>用户需要注册账号并登录后才能使用MySCS。</p><p>用户注册时，需要提供学工号，名，姓，邮箱，密码和确认密码。</p><h5 id=学号>学号
+<a class=anchor href=#%e5%ad%a6%e5%8f%b7>#</a></h5><ul><li>对学生而言，一般情况下学号为8位数字，从高向低数，最高两位代表入学年份，随后的两位代表学院编号，随后的一位代表大班号，最低3位代表班内编号。</li></ul><p>其中，入学年份取值范围为$[17,22]$，学院编号取值范围为$[01,43]$，大班号取值为$[1,6]$，最低三位没有特殊要求，取值范围为$[001,999]$。</p><p>如，$19375030$代表19年入学，在序号为37的学院，第五大班。</p><p>有些情况下，学号为2位大写字母+7位数字，SY开头代表学术型硕士研究生，ZY开头 代表专业型硕士研究生，BY开头代表博士研究生。</p><p>由于本科生和博士生最多读6年，硕士生最多读4年将被退学，所以硕士生的入学年份取值为$[19,22]$ ，博士生的入学年份取值为$[17,22]$，且硕士和博士研究生的班内编号只有2位，取值范围为$[01,99]$，其他要求相同。</p><p>如，$SY2021118$代表硕士研究生，20年入学，21系，第1大班。</p><p><strong>合法的学生学号实例：</strong></p><p>19375030 19375168 BY2215201 SY2021118</p><ul><li>对教师而言，工号为5位数字，没有特殊限制，取值范围为$[00001,99999]$。</li></ul><h5 id=姓名>姓，名
+<a class=anchor href=#%e5%a7%93%e5%90%8d>#</a></h5><p>姓和名都应该只由字母组成，其中首字母大写，非首字母小写，姓和名的长度都在1个字符到20个字符之间。</p><h5 id=邮箱>邮箱
+<a class=anchor href=#%e9%82%ae%e7%ae%b1>#</a></h5><p>一个合法的邮箱地址由 <code>用户名</code> + <code>@</code> + <code>服务器域名</code> 组成。</p><p>本题要求中，用户名应为长度$\geq1$的字符串，只能由大小写字母，下划线和数字中的一种或几种组 成。</p><p>服务器域名的规律为“[N级域名.]&mldr;[三级域名.]二级域名.顶级域名”，比如如“qq.com”、 “mp.weixin.qq.com”、“buaa.edu.cn”，&ldquo;T_T.QAQ.cn"等，域名同样只能由大小写字母，下划线和数字中的一种或几种组成。（即最少有两级域名，最多不限）</p><h5 id=密码>密码
+<a class=anchor href=#%e5%af%86%e7%a0%81>#</a></h5><p>密码应该为8-16位，只能由大小写字母，下划线和数字中的一种或几种组成，要求以字母开头。</p><h5 id=确认密码>确认密码
+<a class=anchor href=#%e7%a1%ae%e8%ae%a4%e5%af%86%e7%a0%81>#</a></h5><p>确认密码必须与密码一致才能成功注册。</p><h5 id=成功输出>成功输出
+<a class=anchor href=#%e6%88%90%e5%8a%9f%e8%be%93%e5%87%ba>#</a></h5><p>当学工号，姓名，邮箱，密码和确认密码都符合上述要求时，注册成功，系统输出：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>register success
+</span></span></code></pre></div><h5 id=失败输出>失败输出
+<a class=anchor href=#%e5%a4%b1%e8%b4%a5%e8%be%93%e5%87%ba>#</a></h5><ul><li>当系统目前有用户登录时，输出</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>already logged in
+</span></span></code></pre></div><p>（MySCS只允许同时有一位用户处于登录状态，此时不可以执行登录或注册命令）。</p><ul><li>学号不合法时，输出</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>user id illegal
+</span></span></code></pre></div><ul><li>学号已被注册时，输出</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>user id duplication
+</span></span></code></pre></div><ul><li>姓或名不合法时，输出</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>user name illegal
+</span></span></code></pre></div><ul><li>邮箱不合法时，输出</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>email address illegal
+</span></span></code></pre></div><ul><li>密码不合法时，输出：</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>password illegal
+</span></span></code></pre></div><ul><li>两次密码不一致时，输出：</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>passwords inconsistent
+</span></span></code></pre></div><h4 id=3用户登录>3.用户登录
+<a class=anchor href=#3%e7%94%a8%e6%88%b7%e7%99%bb%e5%bd%95>#</a></h4><h5 id=成功输出-1>成功输出
+<a class=anchor href=#%e6%88%90%e5%8a%9f%e8%be%93%e5%87%ba-1>#</a></h5><p>当当前没有用户登录，学工号已经注册且密码正确，登录成功，</p><ul><li>如果当前为学生登录，系统输出：</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>Hello 名~
+</span></span></code></pre></div><ul><li>如果当前为教师登录，系统输出：</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>Hello Professor 姓~
+</span></span></code></pre></div><h5 id=失败输出-1>失败输出
+<a class=anchor href=#%e5%a4%b1%e8%b4%a5%e8%be%93%e5%87%ba-1>#</a></h5><ul><li>当系统目前有用户登录时，输出</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>already logged in
+</span></span></code></pre></div><ul><li>学号不合法时，输出</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>user id illegal
+</span></span></code></pre></div><ul><li>学号未被注册时，输出</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>user id not exist
+</span></span></code></pre></div><ul><li>密码错误时，输出</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>wrong password
+</span></span></code></pre></div><h4 id=3-用户登出>3. 用户登出
+<a class=anchor href=#3-%e7%94%a8%e6%88%b7%e7%99%bb%e5%87%ba>#</a></h4><h5 id=成功输出-2>成功输出
+<a class=anchor href=#%e6%88%90%e5%8a%9f%e8%be%93%e5%87%ba-2>#</a></h5><p>当当前有用户登录，则登出成功，系统输出：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>Bye~
+</span></span></code></pre></div><h5 id=失败输出-2>失败输出
+<a class=anchor href=#%e5%a4%b1%e8%b4%a5%e8%be%93%e5%87%ba-2>#</a></h5><ul><li>当系统目前未有用户登录时，输出</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>not logged in
+</span></span></code></pre></div><h4 id=4打印信息>4.打印信息
+<a class=anchor href=#4%e6%89%93%e5%8d%b0%e4%bf%a1%e6%81%af>#</a></h4><p>建议同学们重写Object类的toString()方法完成这项功能。</p><ul><li>当命令为 <code>printInfo</code> 时，按以下格式打印本人个人信息。（教师与学生均可使用）</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>Name: 名 姓
+</span></span><span style=display:flex><span>ID: xxx
+</span></span><span style=display:flex><span>Type: Student/Professor
+</span></span><span style=display:flex><span>Email: xxxxxx
+</span></span></code></pre></div><ul><li>老师有权查看其他老师和学生的个人信息，所以当当前登录用户为教师时，当命令为 <code>printInfo 学号</code> 时，按上述格式打印该人个人信息。</li></ul><h5 id=失败输出-3>失败输出
+<a class=anchor href=#%e5%a4%b1%e8%b4%a5%e8%be%93%e5%87%ba-3>#</a></h5><ul><li>当前未有用户登录，输出</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>login first
+</span></span></code></pre></div><ul><li>当学生调用有参数的 <code>printInfo</code> ，输出</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>permission denied
+</span></span></code></pre></div><ul><li>当作为参数的学号不合法，输出</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>user id illegal
+</span></span></code></pre></div><ul><li>当学号对应的用户未注册，输出</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>user id not exist
+</span></span></code></pre></div><h2 id=输出优先级>输出优先级
+<a class=anchor href=#%e8%be%93%e5%87%ba%e4%bc%98%e5%85%88%e7%ba%a7>#</a></h2><p>首先，当输入的命令未定义时，输出</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>command <span style=color:#e6db74>&#39;命令&#39;</span> not found
+</span></span></code></pre></div><p>例如： 输入： <code>loggin 19375030 123456</code></p><p>由于命令 loggin 未定义，所以输出 <code>command 'loggin' not found</code></p><p>其次，当输入的命令有定义，但是参数的个数不符合要求时，输出</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>arguments illegal
+</span></span></code></pre></div><p>输入： <code>login 19375030 123456 haha</code> 和 <code>login 19375030</code> 都对应着 <code>arguments illegal</code></p><p>当<strong>命令有定义，参数个数正确</strong>时，才会输出 <code>Bye~</code> 或者 <code>user id illegal</code> 等成功或失败输出。</p><p>当一句命令存在多种非法情况，按上述顺序只输出最先发生的非法信息。</p><p>例如，注册时学号和姓名均非法，按上述顺序，输出 <code>user id illegal</code>，而不是<code>user name illegal</code></p><h2 id=hint>HINT
+<a class=anchor href=#hint>#</a></h2><p>在判断姓名，邮箱和密码等的合法与否时，非常建议利用正则表达式来实现，这是一个非常方便实用常用的技巧，希望同学们趁这个机会学习一二，菜鸟教程的Java正则表达式教程就是个不错的小教程。</p><p>例如，想判断<code>19375030@buaa.edu.cn</code>是否满足题目中的条件，用一行代码即可：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Demo</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span><span style=color:#f92672>(</span>String<span style=color:#f92672>[]</span> args<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>        String st <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;19375030@buaa.edu.cn&#34;</span><span style=color:#f92672>;</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>boolean</span> res <span style=color:#f92672>=</span> st<span style=color:#f92672>.</span><span style=color:#a6e22e>matches</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\\w+@\\w+(\\.\\w+)+&#34;</span><span style=color:#f92672>);</span>
+</span></span><span style=display:flex><span>        System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>res<span style=color:#f92672>);</span><span style=color:#75715e>//true
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span></code></pre></div><p>同样地，想要快速便捷地判断密码是否合法，姓名是否合法，甚至处理一行输入中的空白符，都可以考虑利用正则表达式这个好工具。</p><p>当然，同学们可以用能想到的任何合理方法解决（不合理方法：打表等）。</p><h2 id=测试样例>测试样例
+<a class=anchor href=#%e6%b5%8b%e8%af%95%e6%a0%b7%e4%be%8b>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>register <span style=color:#ae81ff>19375030</span> Xinlei Bao 3499475017@qq.com a7ki7kibangbang a7ki7kibangbang
+</span></span><span style=display:flex><span>register success
+</span></span><span style=display:flex><span>login <span style=color:#ae81ff>19375030</span> a7ki7kibangbang
+</span></span><span style=display:flex><span>Hello Xinlei~
+</span></span><span style=display:flex><span>register <span style=color:#ae81ff>10086</span> Alex Herbert 10086@buaa.edu.cn <span style=color:#ae81ff>123</span> <span style=color:#ae81ff>123</span>
+</span></span><span style=display:flex><span>already logged in
+</span></span><span style=display:flex><span>logout
+</span></span><span style=display:flex><span>Bye~
+</span></span><span style=display:flex><span>register <span style=color:#ae81ff>10086</span> Alex Herbert 10086@buaa.edu.cn a12345678 a12345678
+</span></span><span style=display:flex><span>register success
+</span></span><span style=display:flex><span>login <span style=color:#ae81ff>10086</span> a12345678
+</span></span><span style=display:flex><span>Hello Professor Herbert~
+</span></span><span style=display:flex><span>printInfo
+</span></span><span style=display:flex><span>Name: Alex Herbert
+</span></span><span style=display:flex><span>ID: <span style=color:#ae81ff>10086</span>
+</span></span><span style=display:flex><span>Type: Professor
+</span></span><span style=display:flex><span>Email: 10086@buaa.edu.cn
+</span></span><span style=display:flex><span>printInfo <span style=color:#ae81ff>19375030</span>
+</span></span><span style=display:flex><span>Name: Xinlei Bao
+</span></span><span style=display:flex><span>ID: <span style=color:#ae81ff>19375030</span>
+</span></span><span style=display:flex><span>Type: Student
+</span></span><span style=display:flex><span>Email: 3499475017@qq.com
+</span></span><span style=display:flex><span>logout
+</span></span><span style=display:flex><span>Bye~
+</span></span><span style=display:flex><span>QUIT
+</span></span><span style=display:flex><span>----- Good Bye! -----
+</span></span></code></pre></div></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/alex-shpak/hugo-book/commit/b4aa2f2e931a1f1c3868b643f69bfda7b5fe8e38 title='Last modified by RyouonRitsu | September 15, 2022' target=_blank rel=noopener><img src=/Java-HomeWork/svg/calendar.svg class=book-icon alt=Calendar>
+<span>September 15, 2022</span></a></div><div><a class="flex align-center" href=https://github.com/alex-shpak/hugo-book/edit/main/exampleSite/content/docs/MySCS/MySCS-1.md target=_blank rel=noopener><img src=/Java-HomeWork/svg/edit.svg class=book-icon alt=Edit>
+<span>Edit this page</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script><script>MathJax={tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#myscs--1>MySCS -1</a><ul><li><a href=#题目背景>题目背景</a></li><li><a href=#命令概览>命令概览</a></li><li><a href=#功能描述>功能描述</a><ul><li><ul><li><a href=#1开关机>1.开关机</a></li><li><a href=#2用户注册>2.用户注册</a></li><li><a href=#3用户登录>3.用户登录</a></li><li><a href=#3-用户登出>3. 用户登出</a></li><li><a href=#4打印信息>4.打印信息</a></li></ul></li></ul></li><li><a href=#输出优先级>输出优先级</a></li><li><a href=#hint>HINT</a></li><li><a href=#测试样例>测试样例</a></li></ul></li></ul></nav></div></aside></main></body></html>

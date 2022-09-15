@@ -1,1 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>面向对象的程序设计</title><link>https://ryouonritsu.github.io/Java-HomeWork/docs/MySCS/</link><description>Recent content on 面向对象的程序设计</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://ryouonritsu.github.io/Java-HomeWork/docs/MySCS/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>面向对象的程序设计</title><link>https://ryouonritsu.github.io/Java-HomeWork/docs/MySCS/</link><description>Recent content on 面向对象的程序设计</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://ryouonritsu.github.io/Java-HomeWork/docs/MySCS/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://ryouonritsu.github.io/Java-HomeWork/docs/MySCS/MySCS-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ryouonritsu.github.io/Java-HomeWork/docs/MySCS/MySCS-1/</guid><description>MySCS -1 # 同学们，从这周开始，我们会迭代完成一个MySCS，即从零开发的软件学院云平台（青春版）。
+我们每两周会增加一次新的需求，如，MySCS-1需要大家完成账号注册和登录系统，MySCS-2需要大家在1的基础上添加课程系统或其它系统等。
+编写好的代码需要大家用patpat评测，所有测试点都通过以后即可上传到云平台完成本次实验。希望大家认真完成哦！请勿抄袭，抄袭会被查到的（盯
+题目背景 # 软件学院云平台（青春版），即MySCS，是一款更加轻量化的命令行操作的云平台，屏幕前的你拥有完全自主知识产权，有极大的使用价值和收藏价值。
+MySCS分为教师端和学生端，可以实现传统scs的大部分功能，如教师端对课程的增删改查，对课程所属的实验的增删改查，教师还可以为课程添加学生和助教，学生可以查看参与的课程并提交实验作业，助教可以协同老师管理课程等。
+命令概览 # 命令行 功能 输出 QUIT 系统关机 &amp;mdash;&amp;ndash; Good Bye! &amp;mdash;&amp;ndash; register 学工号 名 姓 邮箱 密码 确认密码 注册 register success
+already logged in
+user id illegal
+user id duplication
+user name illegal
+email address illegal
+password illegal
+passwords inconsistent login 学工号 密码 登录 Hello 名~
+Hello Professor 姓~
+already logged in
+user id illegal
+user id not exist</description></item></channel></rss>
