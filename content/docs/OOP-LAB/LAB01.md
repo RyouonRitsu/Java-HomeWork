@@ -5,7 +5,7 @@ math: true
 
 # Lab01: 认识 Java
 
-## 1. 实验⽬的
+## 1. 实验目的
 
 1. 掌握 Java 环境配置
 2. 使用 CMD 编译运行 Java 程序
