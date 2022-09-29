@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>面向对象的程序设计</title><link>https://ryouonritsu.github.io/Java-HomeWork/docs/QA/</link><description>Recent content on 面向对象的程序设计</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://ryouonritsu.github.io/Java-HomeWork/docs/QA/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://ryouonritsu.github.io/Java-HomeWork/docs/QA/OOP%E5%AE%9E%E9%AA%8C%E7%8C%AA%E8%84%9A%E8%AF%B4%E7%AC%AC%E4%B8%80%E6%9C%9F/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ryouonritsu.github.io/Java-HomeWork/docs/QA/OOP%E5%AE%9E%E9%AA%8C%E7%8C%AA%E8%84%9A%E8%AF%B4%E7%AC%AC%E4%B8%80%E6%9C%9F/</guid><description>OOP实验猪脚说——第一期 # [toc]
+前言 # 因为同学们的共性问题非常多，所以各位助教（猪脚）总结并写了下来方便各位查阅，不定期更新，希望能帮到大家。
+迭代实验 # 前置步骤 # Windows用户 # 下载群内提供的patpat示例教程.zip并解压，使用方式在其中的README.md中有详细说明。为了防止大家懒得看，也可以看接下来的步骤；
+patpat-windows-amd64.exe需要重新命名为patpat.exe；
+在patpat示例教程下打开终端（命令行）运行如下命令：
+./patpat reg -sid your_sid -pwd your_password # 如./patpat reg -sid 18373722 -pwd buaa-se-oop 账号创建后，密码不支持修改。如需修改，请联系助教。
+macOS或Linux用户 # 下载群内提供的patpat示例教程.zip并解压，使用方式在其中的README.md中有详细说明。为了防止大家懒得看，也可以看接下来的步骤；
+下载群内提供的patpat各版本.zip并解压，选择正确的版本移入patpat示例教程文件夹中，替换并删除掉原有的patpat-windows-amd64.exe；
+替换后的文件需要重新命名为patpat；
+在patpat示例教程下打开终端（命令行）运行chmod +x patpat，使评测机程序具有可执行权限；
+在patpat示例教程下打开终端（命令行）运行如下命令：
+./patpat reg -sid your_sid -pwd your_password # 如./patpat reg -sid 18373722 -pwd buaa-se-oop 账号创建后，密码不支持修改。如需修改，请联系助教。
+实验具体流程 # 编写完迭代作业的代码；
+建立一个n-学号-姓名的文件夹在patpat示例教程下，其内建立out文件夹（out是n-学号-姓名文件夹的子孙）；
+把你idea中的src文件夹直接复制粘入n-学号-姓名中 （src是out的兄弟）；
+终端（命令行）中运行
+./patpat ta -judge 1-学号-姓名 -pwd your_pwd -tag 随意打一些文字，可以用来标注第几次尝试 # 线上测试命令 命令（不是stu命令不是stu命令不是stu命令，自己编写测试文件和stu自测基本上用不到，只是提供了这么个功能，完全没必要用，我上次就没用过）；</description></item></channel></rss>
