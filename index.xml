@@ -26,8 +26,7 @@ passwords inconsistent login 学工号 密码 登录 Hello 名~
 Hello Professor 姓~
 already logged in
 user id illegal
-user id not exist</description></item><item><title/><link>https://ryouonritsu.github.io/Java-HomeWork/docs/Q-A/%E7%AC%AC%E4%B8%80%E6%9C%9F/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ryouonritsu.github.io/Java-HomeWork/docs/Q-A/%E7%AC%AC%E4%B8%80%E6%9C%9F/</guid><description>OOP实验猪脚说——第一期 # [toc]
-前言 # 因为同学们的共性问题非常多，所以各位助教（猪脚）总结并写了下来方便各位查阅，不定期更新，希望能帮到大家。
+user id not exist</description></item><item><title/><link>https://ryouonritsu.github.io/Java-HomeWork/docs/Q-A/%E7%AC%AC%E4%B8%80%E6%9C%9F/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ryouonritsu.github.io/Java-HomeWork/docs/Q-A/%E7%AC%AC%E4%B8%80%E6%9C%9F/</guid><description>OOP实验猪脚说——第一期 # 前言 # 因为同学们的共性问题非常多，所以各位助教（猪脚）总结并写了下来方便各位查阅，不定期更新，希望能帮到大家。
 迭代实验 # 前置步骤 # Windows用户 # 下载群内提供的patpat示例教程.zip并解压，使用方式在其中的README.md中有详细说明。为了防止大家懒得看，也可以看接下来的步骤；
 patpat-windows-amd64.exe需要重新命名为patpat.exe；
 在patpat示例教程下打开终端（命令行）运行如下命令：
