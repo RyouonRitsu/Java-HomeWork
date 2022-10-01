@@ -75,7 +75,7 @@ aaaw a_1ea 12004 ___
 
 - 当课程号，课程名称都合法时，添加课程成功，系统输出：
 
-```
+```bash
 add course success
 ```
 
@@ -83,31 +83,31 @@ add course success
 
 - 当系统目前没有用户登录时，输出：
 
-```
+```bash
 not logged in
 ```
 
 - 当系统目前登录用户不是老师时，输出：
 
-```
+```bash
 permission denied
 ```
 
 - 当课程号不合法时，输出：
 
-```
+```bash
 course id illegal
 ```
 
 - 当课程号被注册时，输出：
 
-```
+```bash
 course id duplication
 ```
 
 - 当课程名称不合法时，输出
 
-```
+```bash
 course name illegal
 ```
 
@@ -125,7 +125,7 @@ course name illegal
 
 - 当课程号合法要求且在自己的名下存在时，移除课程成功，系统输出：
 
-```
+```bash
 remove course success
 ```
 
@@ -133,25 +133,25 @@ remove course success
 
 - 当系统目前没有用户登录时，输出：
 
-```
+```bash
 not logged in
 ```
 
 - 当系统目前登录用户不是老师时，输出：
 
-```
+```bash
 permission denied
 ```
 
 - 当课程号不合法要求时，系统输出：
 
-```
+```bash
 course id illegal
 ```
 
 - 当课程号不存在或不在自己名下时，系统输出：
 
-```
+```bash
 course id not exist
 ```
 
@@ -171,7 +171,7 @@ course id not exist
 
 > Hint：可以考虑使用 TreeMap 来存储课程实例。
 
-```
+```bash
 [ID:课程编号] [Name:课程名称] [TeacherNum:老师人数] [AssistantNum:助教人数] [StudentNum:学生人数]
 ```
 
@@ -185,19 +185,19 @@ course id not exist
 
 - 当系统目前没有用户登录时，输出：
 
-```
+```bash
 not logged in
 ```
 
 - 当系统目前登录用户不是老师时，输出：
 
-```
+```bash
 permission denied
 ```
 
 - 当老师名下没有课程时，输出：
 
-```
+```bash
 course not exist
 ```
 
@@ -213,7 +213,7 @@ course not exist
 
 - 当老师或助教调用此命令，课程号合法要求且课程在自己名下时，系统输出：
 
-```
+```bash
 select course success
 ```
 
@@ -221,25 +221,25 @@ select course success
 
 - 当系统目前没有用户登录时，输出：
 
-```
+```bash
 not logged in
 ```
 
 - 当系统目前登录用户不是老师或助教时，输出：
 
-```
+```bash
 permission denied
 ```
 
 - 当课程号不合法要求时，系统输出：
 
-```
+```bash
 course id illegal
 ```
 
 - 当课程号不存在或不在自己名下时，系统输出：
 
-```
+```bash
 course id not exist
 ```
 
@@ -265,7 +265,7 @@ addAdmin 10001 20373252 19377054 19375030 19377110 10086
 
 - 当老师调用此命令，所有学工号合法要求的话，系统输出：
 
-```
+```bash
 add admin success
 ```
 
@@ -275,31 +275,31 @@ add admin success
 
 - 当系统目前没有用户登录时，输出：
 
-```
+```bash
 not logged in
 ```
 
 - 当系统目前登录用户不是老师时，输出：
 
-```
+```bash
 permission denied
 ```
 
 - 当用户没有选择课程时，输出：
 
-```
+```bash
 no course selected
 ```
 
 - 当参数学工号出现不合法（以第一个出错的参数为准）的情况时，系统不接受这条指令的所有参数，系统输出：
 
-```
+```bash
 user id illegal
 ```
 
 - 当参数学工号出现未被注册（以第一个出错的参数为准）的情况时，系统不接受这条指令的所有参数，系统输出：
 
-```
+```bash
 user id not exist
 ```
 
@@ -315,7 +315,7 @@ user id not exist
 
 - 当老师登录，选择了课程，且参数都合法时，系统输出：
 
-```
+```bash
 remove admin success
 ```
 
@@ -323,31 +323,31 @@ remove admin success
 
 - 当系统目前没有用户登录时，输出：
 
-```
+```bash
 not logged in
 ```
 
 - 当系统目前登录用户不是老师时，输出：
 
-```
+```bash
 permission denied
 ```
 
 - 当用户没有选择课程时，输出：
 
-```
+```bash
 no course selected
 ```
 
 - 当参数学工号不合法时，系统输出：
 
-```
+```bash
 user id illegal
 ```
 
 - 当参数学工号未被注册或不在课程管理端成员中时，系统输出：
 
-```
+```bash
 user id not exist
 ```
 
@@ -365,7 +365,7 @@ user id not exist
 
 顺序为学工号数字从小到大排列
 
-```
+```bash
 [ID:学工号] [Name:姓 名] [Type:用户身份(Professor/Assistant)] [Email:电子邮箱]
 ```
 
@@ -377,19 +377,19 @@ user id not exist
 
 - 当系统目前没有用户登录时，输出：
 
-```
+```bash
 not logged in
 ```
 
 - 当系统目前登录用户不是老师或助教时，输出：
 
-```
+```bash
 permission denied
 ```
 
 - 当用户没有选择课程时，输出：
 
-```
+```bash
 no course selected
 ```
 
@@ -408,13 +408,13 @@ no course selected
 - 当有助教身份的学生成功登录MySCS时，使用此指令可以在助教端和学生端之间切换
 - 切换成助教成功时输出：
 
-```
+```bash
 change into Assistant success
 ```
 
 - 切换成学生成功时输出：
 
-```
+```bash
 change into Student success
 ```
 
@@ -422,13 +422,13 @@ change into Student success
 
 - 当系统目前没有用户登录时，输出：
 
-```
+```bash
 not logged in
 ```
 
 - 当系统目前登录用户不是有助教身份的学生或是老师时，输出：
 
-```
+```bash
 permission denied
 ```
 
@@ -464,7 +464,7 @@ W210201 W191743 W182930
 
 - 当老师调用此命令，资料编号合法的话，系统输出：
 
-```
+```bash
 add ware success
 ```
 
@@ -472,37 +472,37 @@ add ware success
 
 - 当系统目前没有用户登录时，输出：
 
-```
+```bash
 not logged in
 ```
 
 - 当系统目前登录用户不是老师时，输出：
 
-```
+```bash
 permission denied
 ```
 
 - 当用户没有选择课程时，输出：
 
-```
+```bash
 no course selected
 ```
 
 - 当课程资料号不合法时，输出：
 
-```
+```bash
 ware id illegal
 ```
 
 - 当课程资料号被注册时，输出：
 
-```
+```bash
 ware id duplication
 ```
 
 - 当课程资料名称不合法时，输出：
 
-```
+```bash
 ware name illegal
 ```
 
@@ -520,7 +520,7 @@ ware name illegal
 
 - 当课程资料号合法且在自己的名下存在时，移除课程资料成功，系统输出：
 
-```
+```bash
 remove ware success
 ```
 
@@ -528,31 +528,31 @@ remove ware success
 
 - 当系统目前没有用户登录时，输出：
 
-```
+```bash
 not logged in
 ```
 
 - 当系统目前登录用户不是老师时，输出：
 
-```
+```bash
 permission denied
 ```
 
 - 当用户没有选择课程时，输出：
 
-```
+```bash
 no course selected
 ```
 
 - 当课程资料号不合法时，系统输出：
 
-```
+```bash
 ware id illegal
 ```
 
 - 当课程资料号未被注册或不在课程中时，系统输出：
 
-```
+```bash
 ware id not exist
 ```
 
@@ -570,7 +570,7 @@ ware id not exist
 
 顺序由课程资料编号数字从小到大排列
 
-```
+```bash
 [ID:课程资料编号] [Name:课程资料名称]
 ```
 
@@ -584,19 +584,19 @@ ware id not exist
 
 - 当系统目前没有用户登录时，输出：
 
-```
+```bash
 not logged in
 ```
 
 - 当系统目前登录用户不是老师或助教时，输出：
 
-```
+```bash
 permission denied
 ```
 
 - 当用户没有选择课程时，输出：
 
-```
+```bash
 no course selected
 ```
 
@@ -640,7 +640,7 @@ T210201 T191743 T182930
 
 - 当老师或助教调用此命令，作业编号合法要求的话，系统输出：
 
-```
+```bash
 add task success
 ```
 
@@ -648,43 +648,43 @@ add task success
 
 - 当系统目前没有用户登录时，输出：
 
-```
+```bash
 not logged in
 ```
 
 - 当系统目前登录用户不是老师或助教时，输出：
 
-```
+```bash
 permission denied
 ```
 
 - 当用户没有选择课程时，输出：
 
-```
+```bash
 no course selected
 ```
 
 - 当课程作业号不合法时，输出：
 
-```
+```bash
 task id illegal
 ```
 
 - 当课程作业号被注册时，输出：
 
-```
+```bash
 task id duplication
 ```
 
 - 课程作业名称不合法时，输出：
 
-```
+```bash
 task name illegal
 ```
 
 - 课程作业时间不合法时，输出：
 
-```
+```bash
 task time illegal
 ```
 
@@ -702,7 +702,7 @@ task time illegal
 
 - 当课程作业号合法要求且在自己的名下存在时，移除课程作业成功，系统输出：
 
-```
+```bash
 remove task success
 ```
 
@@ -710,31 +710,31 @@ remove task success
 
 - 当系统目前没有用户登录时，输出：
 
-```
+```bash
 not logged in
 ```
 
 - 当系统目前登录用户不是老师或助教时，输出：
 
-```
+```bash
 permission denied
 ```
 
 - 当用户没有选择课程时，输出：
 
-```
+```bash
 no course selected
 ```
 
 - 当课程作业号不合法时，系统输出：
 
-```
+```bash
 task id illegal
 ```
 
 - 当课程作业号未被注册或不在课程中时，系统输出：
 
-```
+```bash
 task id not exist
 ```
 
@@ -752,7 +752,7 @@ task id not exist
 
 顺序由课程作业编号数字从小到大排列
 
-```
+```bash
 [ID:课程作业编号] [Name:课程作业名称] [ReceiveNum:接收作业份数] [StartTime:开始时间] [EndTime:截止时间]
 ```
 
@@ -766,19 +766,19 @@ task id not exist
 
 - 当系统目前没有用户登录时，输出：
 
-```
+```bash
 not logged in
 ```
 
 - 当系统目前登录用户不是老师或助教时，输出：
 
-```
+```bash
 permission denied
 ```
 
 - 当用户没有选择课程时，输出：
 
-```
+```bash
 no course selected
 ```
 
@@ -802,7 +802,7 @@ addStudent 20373252 19377054 19375030 19377110
 
 - 当老师或助教调用此命令，学工号合法要求的话，系统输出：
 
-```
+```bash
 add student success
 ```
 
@@ -810,37 +810,37 @@ add student success
 
 - 当系统目前没有用户登录时，输出：
 
-```
+```bash
 not logged in
 ```
 
 - 当系统目前登录用户不是老师或助教时，输出：
 
-```
+```bash
 permission denied
 ```
 
 - 当用户没有选择课程时，输出：
 
-```
+```bash
 no course selected
 ```
 
 - 当参数学工号出现不合法（以第一个出错的参数为准）的情况时，系统不接受这条指令的所有参数，系统输出：
 
-```
+```bash
 user id illegal
 ```
 
 - 当参数学工号出现未被注册（以第一个出错的参数为准）的情况时，系统不接受这条指令的所有参数，系统输出：
 
-```
+```bash
 user id not exist
 ```
 
 - 当参数学工号出现老师的学工号（以第一个出错的参数为准）时，系统不接受这条指令的所有参数，系统输出：
 
-```
+```bash
 I'm professor rather than student!
 ```
 
@@ -856,7 +856,7 @@ I'm professor rather than student!
 
 - 当老师或助教登录，选择了课程，且参数都合法时，系统输出：
 
-```
+```bash
 remove student success
 ```
 
@@ -864,31 +864,31 @@ remove student success
 
 - 当系统目前没有用户登录时，输出：
 
-```
+```bash
 not logged in
 ```
 
 - 当系统目前登录用户不是老师或助教时，输出：
 
-```
+```bash
 permission denied
 ```
 
 - 当用户没有选择课程时，输出：
 
-```
+```bash
 no course selected
 ```
 
 - 当参数学工号不合法时，系统输出：
 
-```
+```bash
 user id illegal
 ```
 
 - 当参数学工号未被注册或未在课程中时，系统输出：
 
-```
+```bash
 user id not exist
 ```
 
@@ -906,7 +906,7 @@ user id not exist
 
 顺序为学工号数字从小到大排列
 
-```
+```bash
 [ID:学工号] [Name:姓 名] [Email:电子邮箱]
 ```
 
@@ -918,19 +918,19 @@ user id not exist
 
 - 当系统目前没有用户登录时，输出：
 
-```
+```bash
 not logged in
 ```
 
 - 当系统目前登录用户不是老师或助教时，输出：
 
-```
+```bash
 permission denied
 ```
 
 - 当用户没有选择课程时，输出：
 
-```
+```bash
 no course selected
 ```
 
@@ -938,7 +938,7 @@ no course selected
 
 首先，当输入的命令未定义时，输出
 
-```
+```bash
 command '命令' not found
 ```
 
@@ -948,7 +948,7 @@ command '命令' not found
 
 其次，当输入的命令有定义，但是参数的个数不合法要求时，输出
 
-```
+```bash
 arguments illegal
 ```
 
@@ -962,7 +962,7 @@ arguments illegal
 
 ## 测试样例
 
-```
+```bash
 register 20373252 Yixiao Li 20373252@buaa.edu.cn x12345678 x12345678
 register success
 register 19377054 Hongxi Zhou 19377054@buaa.edu.cn x12345678 x12345678
