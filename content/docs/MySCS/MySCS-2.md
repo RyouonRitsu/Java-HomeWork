@@ -1,9 +1,9 @@
 ---
-weight: 201
+weight: 202
 math: true
 ---
 
-# Myscs -2
+# MySCS -2
 
 同学们，我们用了两周时间完成了MySCS的部分功能，已经实现了老师端和学生端的登录注册。
 
