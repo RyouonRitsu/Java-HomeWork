@@ -31,7 +31,7 @@ passwords inconsistent login 学工号 密码 登录 Hello 名~
 Hello Professor 姓~
 already logged in
 user id illegal
-user id not exist</description></item><item><title/><link>https://ryouonritsu.github.io/Java-HomeWork/docs/MySCS/MySCS-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ryouonritsu.github.io/Java-HomeWork/docs/MySCS/MySCS-2/</guid><description>Myscs -2 # 同学们，我们用了两周时间完成了MySCS的部分功能，已经实现了老师端和学生端的登录注册。
+user id not exist</description></item><item><title/><link>https://ryouonritsu.github.io/Java-HomeWork/docs/MySCS/MySCS-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ryouonritsu.github.io/Java-HomeWork/docs/MySCS/MySCS-2/</guid><description>MySCS -2 # 同学们，我们用了两周时间完成了MySCS的部分功能，已经实现了老师端和学生端的登录注册。
 我们每两周会增加一次新的需求，MySCS-2需要大家在MySCS-1的基础上完成管理端的基础命令，MySCS-3需要大家在2的基础上添加学生操作以及其他功能等。（挖坑
 编写好的代码需要大家用patpat评测，所有测试点都通过以后即可上传到云平台完成本次实验。希望大家认真完成哦！请勿抄袭，抄袭会被查到的（盯
 题目背景 # 软件学院云平台（青春版），即MySCS，是一款更加轻量化的命令行操作的云平台，屏幕前的你拥有完全的自主知识产权，有极大的使用价值和收藏价值。
