@@ -3,7 +3,7 @@ weight: 202
 math: true
 ---
 
-# MySCS -2
+# MySCS-2
 
 同学们，我们用了两周时间完成了MySCS的部分功能，已经实现了老师端和学生端的登录注册。
 
@@ -257,7 +257,7 @@ course id not exist
 
 ##### 正确输入实例
 
-addAdmin 10001 20373252 19377054 19375030 19377110 10086
+addAdmin 10001 20373252 19376054 19375030 19376110 10086
 
 ##### 成功输出
 
@@ -794,7 +794,7 @@ no course selected
 
 ##### 正确输入实例
 
-addStudent 20373252 19377054 19375030 19377110
+addStudent 20373252 19376054 19375030 19376110
 
 ##### 成功输出
 
@@ -965,7 +965,7 @@ arguments illegal
 ```bash
 register 20373252 Yixiao Li 20373252@buaa.edu.cn x12345678 x12345678
 register success
-register 19377054 Hongxi Zhou 19377054@buaa.edu.cn x12345678 x12345678
+register 19376054 Hongxi Zhou 19376054@buaa.edu.cn x12345678 x12345678
 register success
 register 10001 Xueping Shen 10001@buaa.edu.cn x12345678 x12345678
 register success
@@ -978,6 +978,7 @@ listCourse
 selectCourse C2101
 select course success
 addAdmin 20373252
+add admin success
 listAdmin
 [ID:10001] [Name:Shen Xueping] [Type:Professor] [Email:10001@buaa.edu.cn]
 [ID:20373252] [Name:Li Yixiao] [Type:Assistant] [Email:20373252@buaa.edu.cn]
@@ -989,14 +990,16 @@ addWare W210101 autumn_ware1.txt
 add ware success
 listWare
 [ID:W210101] [Name:autumn_ware1.txt]
-addStudent 19377054
+addStudent 19376054
 add student success
 listStudent
-[ID:19377054] [Name:Zhou Hongxi] [Email:19377054@buaa.edu.cn]
+[ID:19376054] [Name:Zhou Hongxi] [Email:19376054@buaa.edu.cn]
 logout
 Bye~
 login 20373252 x12345678
 Hello Yixiao~
+changeRole
+change into Assistant success
 selectCourse C2101
 select course success
 listAdmin
@@ -1007,7 +1010,7 @@ listTask
 listWare
 [ID:W210101] [Name:autumn_ware1.txt]
 listStudent
-[ID:19377054] [Name:Zhou Hongxi] [Email:19377054@buaa.edu.cn]
+[ID:19376054] [Name:Zhou Hongxi] [Email:19376054@buaa.edu.cn]
 logout
 Bye~
 QUIT
