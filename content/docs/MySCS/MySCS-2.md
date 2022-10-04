@@ -61,7 +61,7 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
 
 ##### 合法的课程号实例
 
-C2102 C2293 C1721
+`C2102` `C2293` `C1721`
 
 ##### 课程名称
 
@@ -69,7 +69,7 @@ C2102 C2293 C1721
 
 ##### 合法的课程名称实例
 
-aaaw a_1ea 12004 ___
+`aaawa_1ea` `12004___`
 
 ##### 成功输出
 
@@ -121,6 +121,8 @@ course name illegal
 
 老师移除课程时，需要提供课程号。
 
+> 移除课程后需注意清除当前选择课程。
+
 ##### 成功输出
 
 - 当课程号合法要求且在自己的名下存在时，移除课程成功，系统输出：
@@ -161,7 +163,7 @@ course id not exist
 
 ##### 使用对象：老师端（注意，因为目前没有做学生端相关内容，需要预留接口嗷，助教端的课程列表和学生端会在后续添加）
 
-当老师成功登录MySCS时即可列出课程列表，每个老师所属课程相对独立。
+当老师成功登录MySCS时即可列出课程列表，每个老师所属课程相对独立，即只能看见自己所管理的课程。
 
 ##### 成功输出
 
@@ -177,9 +179,10 @@ course id not exist
 
 ##### 成功输出实例
 
+```bash
 [ID:C2021] [Name:oop_spring] [TeacherNum:1] [AssistantNum:2] [StudentNum:200]
-
 [ID:C2121] [Name:oop_autumn] [TeacherNum:2] [AssitantNum:4] [StudentNum:200]
+```
 
 ##### 失败输出
 
@@ -257,7 +260,7 @@ course id not exist
 
 ##### 正确输入实例
 
-addAdmin 10001 20373252 19376054 19375030 19376110 10086
+`addAdmin 10001 20373252 19376054 19375030 19376110 10086`
 
 ##### 成功输出
 
@@ -310,6 +313,8 @@ user id not exist
 ##### 使用对象：老师端
 
 当老师成功登录MySCS并且选中课程时即可移除管理端成员。
+
+> 默认老师不会移除自己。
 
 ##### 成功输出
 
@@ -371,7 +376,7 @@ user id not exist
 
 ##### 成功输出实例
 
-[ID:2037252] [Name:Fl Rover] [Type:Assistant] [Email:`20373252@buaa.edu.cn`]
+`[ID:2037252] [Name:Fl Rover] [Type:Assistant] [Email:20373252@buaa.edu.cn]`
 
 ##### 失败输出
 
@@ -446,7 +451,7 @@ permission denied
 
 ##### 合法的课程资料编号实例
 
-W210201 W191743 W182930
+`W210201` `W191743` `W182930`
 
 ##### 课程资料名称
 
@@ -576,9 +581,10 @@ ware id not exist
 
 ##### 成功输出实例
 
+```bash
 [ID:W193701] [Name:Test1.pdf]
-
 [ID:W193702] [Name:Test2.pdf]
+```
 
 ##### 失败输出
 
@@ -614,7 +620,7 @@ no course selected
 
 ##### 合法的课程作业编号实例
 
-T210201 T191743 T182930
+`T210201` `T191743` `T182930`
 
 ##### 课程作业名称
 
@@ -632,9 +638,9 @@ T210201 T191743 T182930
 
 - 时间格式为xxxx-xx-xx-xx:xx:xx，分别对应年、月、日、时、分、秒，不够补前导零，需要满足真实时间（闰年、12个月等基本日期格式要求，年份范围为$[1900,9999]$），注意截至时间需要在开始时间之后
 
-##### 时间实例
+##### 时间示例
 
-2022-02-02-00:03:19
+`2022-02-02-00:03:19`
 
 ##### 成功输出
 
@@ -758,9 +764,10 @@ task id not exist
 
 ##### 成功输出实例
 
+```bash
 [ID:T193701] [Name:Test1.pdf] [ReceiveNum:100] [StartTime:2022-09-17-00:00:01] [EndTime:2022-09-18-00:00:01]
-
 [ID:T193702] [Name:Test2.pdf] [ReceiveNum:50] [StartTime:2022-09-17-00:00:01] [EndTime:2022-09-18-00:00:01]
+```
 
 ##### 失败输出
 
@@ -794,7 +801,7 @@ no course selected
 
 ##### 正确输入实例
 
-addStudent 20373252 19376054 19375030 19376110
+`addStudent 20373252 19376054 19375030 19376110`
 
 ##### 成功输出
 
@@ -912,7 +919,7 @@ user id not exist
 
 ##### 成功输出实例
 
-[ID:2037252] [Name:Fl Rover] [Email:`20373252@buaa.edu.cn`]
+`[ID:2037252] [Name:Fl Rover] [Email:20373252@buaa.edu.cn]`
 
 ##### 失败输出
 
@@ -985,7 +992,7 @@ listAdmin
 addTask T210101 autumn_task1.txt 2020-02-29-00:00:00 2024-02-29-00:00:00
 add task success
 listTask
-[ID:T210101] [Name:autumn_task1] [ReceiveNum:0] [StartTime:2020-02-29-00:00:00] [EndTime:2024-02-29-00:00:00]
+[ID:T210101] [Name:autumn_task1.txt] [ReceiveNum:0] [StartTime:2020-02-29-00:00:00] [EndTime:2024-02-29-00:00:00]
 addWare W210101 autumn_ware1.txt
 add ware success
 listWare
