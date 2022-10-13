@@ -119,6 +119,8 @@ course name illegal
 
 当老师成功登录MySCS时即可移除课程，每个老师所属课程相对独立。
 
+只要是该课程的管理员均可移除课程，移除课程后所有跟课程相关的资料、作业、学生信息等都会被删除（彻底remove）。
+
 老师移除课程时，需要提供课程号。
 
 > 移除课程后需注意清除当前选择课程。
@@ -272,7 +274,7 @@ course id not exist
 add admin success
 ```
 
-> Hint：注意不要重复添加管理端成员。
+> Hint：重复添加管理员被视为合法行为，输出成功命令但不进行任何操作。
 
 ##### 失败输出
 
@@ -1013,7 +1015,7 @@ listAdmin
 [ID:10001] [Name:Shen Xueping] [Type:Professor] [Email:10001@buaa.edu.cn]
 [ID:20373252] [Name:Li Yixiao] [Type:Assistant] [Email:20373252@buaa.edu.cn]
 listTask
-[ID:T210101] [Name:autumn_task1] [ReceiveNum:0] [StartTime:2020-02-29-00:00:00] [EndTime:2024-02-29-00:00:00]
+[ID:T210101] [Name:autumn_task1.txt] [ReceiveNum:0] [StartTime:2020-02-29-00:00:00] [EndTime:2024-02-29-00:00:00]
 listWare
 [ID:W210101] [Name:autumn_ware1.txt]
 listStudent
