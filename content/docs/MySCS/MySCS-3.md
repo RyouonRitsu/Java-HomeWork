@@ -19,4 +19,8 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
 
 | 命令行 | 功能 | 输出 |
 | --- | --- | --- |
-| listCourse | 列出所有课程 | [ID:课程编号] [Name:课程名称] [TeacherNum:老师人数] [AssistantNum:助教人数] [StudentNum:学生人数] |
+| `listCourse` | 列出所有课程 | `[ID:课程编号] [Name:课程名称] [TeacherNum:老师人数] [AssistantNum:助教人数] [StudentNum:学生人数]` |
+| `selectCourse 课程编号` | 选择课程 | `select course success` |
+| `listWare` | 列出课程资料 | `[ID:课程资料编号] [Name:课程资料名称]` |
+| `downloadWare 课程资料编号` | 下载课程资料 | `download success` |
+| `listTask` | 列出课程作业 | `[ID:课程作业编号] [Name:课程作业名称] [ReceiveNum:接收作业份数] [StartTime:开始时间] [EndTime:截止时间]` |

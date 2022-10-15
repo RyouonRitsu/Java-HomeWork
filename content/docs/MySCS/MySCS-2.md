@@ -34,7 +34,7 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
 | listWare                                             | 列出课程资料（管理端）       | [ID:课程资料编号] [Name:课程资料名称]                        |
 | addTask 作业编号  作业名称 作业开始时间 作业截至时间 | 添加课程作业（管理端）       | add task success                                             |
 | removeTask 作业编号                                  | 移除课程作业（管理端）       | remove task success                                          |
-| listTask                                             | 列出课程作业（管理端）       | [ID:课程作业编号] [Name:课程作业名称] [ReceiveNum:接收作业份数] [StartTime:开始时间] [EndTime:截 止时间] |
+| listTask                                             | 列出课程作业（管理端）       | [ID:课程作业编号] [Name:课程作业名称] [ReceiveNum:接收作业份数] [StartTime:开始时间] [EndTime:截止时间] |
 | addStudent 学工号 学工号 ...                         | 添加课程学生（管理端）       | add student success                                          |
 | removeStudent 学工号                                 | 移除课程学生（管理端）       | remove student success                                       |
 | listStudent                                          | 列出课程学生（管理端）       | [ID:学工号] [Name:姓 名] [Email:电子邮箱]                    |
