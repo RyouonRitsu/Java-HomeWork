@@ -70,7 +70,7 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
 
     ```bash
     total $课程总数 courses
-    [1] [ID: $课程编号] [Name: $课程名称] [TeacherNum: $老师人数] [AssistantNum: $助教人  数]   [StudentNum: $学生人数]
+    [1] [ID: $课程编号] [Name: $课程名称] [TeacherNum: $老师人数] [AssistantNum: $助教人数] [StudentNum: $学生人数]
     ...
     ```
 
@@ -79,8 +79,8 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
     ```bash
     $ listCourse
     total 2 courses
-    [1] [ID: C2021] [Name: oop_spring] [TeacherNum: 1] [AssistantNum: 2] [StudentNum:   200]
-    [2] [ID: C2121] [Name: oop_autumn] [TeacherNum: 2] [AssistantNum: 4] [StudentNum:   200]
+    [1] [ID: C2021] [Name: oop_spring] [TeacherNum: 1] [AssistantNum: 2] [StudentNum: 200]
+    [2] [ID: C2121] [Name: oop_autumn] [TeacherNum: 2] [AssistantNum: 4] [StudentNum: 200]
     ```
 
     **注意**：**“:”后的空格**，后同，不再提醒。
@@ -102,8 +102,8 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
     ```bash
     $ listCourse
     total 2 courses
-    [1] [ID: C2021] [Name: oop_spring] [Creator: Xueping Shen] [TeacherNum: 1]     [AssistantNum: 2] [StudentNum: 200]
-    [2] [ID: C2121] [Name: oop_autumn] [Creator: Xueping Shen] [TeacherNum: 2]     [AssistantNum: 4] [StudentNum: 200]
+    [1] [ID: C2021] [Name: oop_spring] [Creator: Xueping Shen] [TeacherNum: 1] [AssistantNum: 2] [StudentNum: 200]
+    [2] [ID: C2121] [Name: oop_autumn] [Creator: Xueping Shen] [TeacherNum: 2] [AssistantNum: 4] [StudentNum: 200]
     ```
 
 - 失败输出
