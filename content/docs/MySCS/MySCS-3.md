@@ -939,20 +939,18 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
 
    ```bash
    MySCS\example
-   │  LAB1.md
-   │  Lesson1.txt
-   │  19376054.task
-   │  T191743.ans
-   │  patpat-windows-amd64.exe
-   │
-   ├─3-学号-姓名
-   │  ├─out
-   │  └─src
-   │       Test.java
-   │
-   └─test
-         test.yaml
-         judge.yaml
+    ├─LAB1.md
+    ├─Lesson1.txt
+    ├─19376054.task
+    ├─T191743.ans
+    ├─patpat-windows-amd64.exe
+    ├─3-学号-姓名
+    │  ├─out
+    │  └─src
+    │     └─Test.java
+    └─test
+       ├─test.yaml
+       └─judge.yaml
    ```
 
    提交代码时，请保持以上目录结构。
