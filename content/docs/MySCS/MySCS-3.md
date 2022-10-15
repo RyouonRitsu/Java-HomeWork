@@ -93,7 +93,7 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
   
     ```bash
     total $课程总数 courses
-    [1] [ID: $课程编号] [Name: $课程名称] [Creator: ${名} ${姓}] [TeacherNum: $老师人数]     [AssistantNum: $助教人数] [StudentNum: $学生人数]
+    [1] [ID: $课程编号] [Name: $课程名称] [Creator: ${名} ${姓}] [TeacherNum: $老师人数] [AssistantNum: $助教人数] [StudentNum: $学生人数]
     ...
     ```
 
@@ -101,9 +101,8 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
 
     ```bash
     $ listCourse
-    total 2 courses
-    [1] [ID: C2021] [Name: oop_spring] [Creator: Xueping Shen] [TeacherNum: 1] [AssistantNum: 2] [StudentNum: 200]
-    [2] [ID: C2121] [Name: oop_autumn] [Creator: Xueping Shen] [TeacherNum: 2] [AssistantNum: 4] [StudentNum: 200]
+    total 1 course
+    [1] [ID: C2121] [Name: oop_autumn] [Creator: Xueping Shen] [TeacherNum: 2] [AssistantNum: 4] [StudentNum: 200]
     ```
 
 - 失败输出
@@ -214,6 +213,28 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
     selected course: [$课程编号: $课程名称]
     ```
 
+  - Example
+
+    ```bash
+    $ queryStatus
+    login status: false
+    permission: none
+    $ login 19375030 a7ki7kibangbang
+    Hello Xinlei~
+    $ queryStatus
+    login status: true
+    username: Xinlei Bao
+    permission: student
+    selected course: none
+    $ selectCourse C2021
+    select course success
+    $ queryStatus
+    login status: true
+    username: Xinlei Bao
+    permission: student
+    selected course: [C2021: oop_spring]
+    ```
+
   **注意**： `$权限` 为 `teacher` 、 `assistant` 或 `student` 中的一种，显然地， `changeRole` 命令会变更 `$权限` 的状态。
 
 - 失败输出
@@ -245,6 +266,18 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
   ```
 
   **注意**：课程创建者总是处在首位，并与其他管理员老师使用 `---` 分隔开，其余管理员老师的顺序按照 `Name` 作为一个整体字符串的字典序排序，同名顺序按照添加的先后顺序输出，**评测保证不会出现同名老师**。
+
+  - Example
+
+    ```bash
+    $ selectCourse C2121
+    select course success
+    $ queryTeacher
+    total 2 teachers
+    [1] [Name: Xueping Shen] [Email: xueping@buaa.edu.cn]
+    ---
+    [2] [Name: Xiang Gao] [Email: gaoxiang@buaa.edu.cn]
+    ```
 
 - 失败输出
   - 当参数数量不正确时，输出：
@@ -293,6 +326,17 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
 
   **注意**：助教的顺序按照 `Name` 作为一个整体字符串的字典序排序，同名顺序按照添加的先后顺序输出，**评测保证不会出现同名助教**。
 
+  - Example
+
+    ```bash
+    $ selectCourse C2121
+    select course success
+    $ queryAssistant
+    total 2 assistants
+    [1] [Name: Hongxi Zhou] [Email: 19376054@buaa.edu.cn]
+    [2] [Name: Yixiao Li] [Email: 20373252@buaa.edu.cn]
+    ```
+
 - 失败输出
   - 当参数数量不正确时，输出：
 
@@ -339,13 +383,29 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
 - 成功输出
   
   ```bash
-  add $成功添加的资料总数 ware(s) success
-  $添加失败的资料总数 ware(s) failed
+  add $成功添加的资料总数 wares success
+  $添加失败的资料总数 wares failed
   [1] [ID: $失败资料编号] [Path: $失败资料路径地址] [Reason: $失败原因]
   ...
   ```
 
-  失败原因包括： `ware id illegal`、`ware id duplication`、`ware name illegal`、`ware file does not exist`、`ware file operation failed`、`unexpected error`。
+  - 失败原因包括： `ware id illegal`、`ware id duplication`、`ware name illegal`、`ware file does not exist`、`ware file operation failed`、`unexpected error`。
+
+  - 特别地，第一行及第二行当资料数为0或1时，变更 `wares` 为单数形式，例如：
+
+    ```bash
+    add 1 ware success
+    0 ware failed
+    ```
+
+  - Example
+
+    ```bash
+    $ addWare W212101 Lesson1.md W212102 Lesson2.md W212103 abc
+    add 2 wares success
+    1 ware failed
+    [1] [ID: W212103] [Path: abc] [Reason: ware name illegal]
+    ```
 
 - 失败输出
   - 当参数数量不正确时，输出：
@@ -403,6 +463,18 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
     please select course first
     ```
 
+  - 当课程资料编号未被注册或不在课程中时，系统输出：
+
+    ```bash
+    ware not found
+    ```
+
+  - 当删除文件失败时，系统输出：
+
+    ```bash
+    delete file failed
+    ```
+
 其余输出不变，输出顺序不变
 
 ### 列出课程资料
@@ -423,6 +495,15 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
   [1] [ID: $课程资料编号] [Name: $课程资料名称]
   ...
   ```
+
+  - Example
+
+    ```bash
+    $ listWare
+    total 2 wares
+    [1] [ID: W212101] [Name: Lesson1.md]
+    [2] [ID: W212102] [Name: Lesson2.md]
+    ```
 
 - 失败输出
   - 当参数数量不正确时，输出：
@@ -513,6 +594,18 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
     please select course first
     ```
 
+  - 当课程作业编号未被注册或不在课程中时，系统输出：
+
+    ```bash
+    task not found
+    ```
+
+  - 当删除文件失败时，系统输出：
+
+    ```bash
+    delete file failed
+    ```
+
 其余输出不变，输出顺序不变
 
 ### 列出课程作业
@@ -531,17 +624,35 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
 
     ```bash
     total $作业总数 tasks
-    [1] [ID: $课程作业编号] [Name: $课程作业名称] [ReceiveNum: $接收作业份数] [StartTime: $开始时间] [EndTime: $截止时间]
+    [1] [ID: $课程作业编号] [Name: $课程作业名称] [SubmissionStatus: $接收作业份数/$课程总人数] [StartTime: $开始时间] [EndTime: $截止时间]
     ...
     ```
+
+    - Example
+
+      ```bash
+      total 2 tasks
+      [1] [ID: T212101] [Name: LAB01.md] [SubmissionStatus: 200/200] [StartTime: 2022-09-08-19:00:00] [EndTime: 2022-09-22-18:59:59]
+      [2] [ID: T212102] [Name: LAB02.md] [SubmissionStatus: 114/200] [StartTime: 2022-09-15-19:00:00] [EndTime: 2022-09-29-18:59:59]
+      ```
 
   - 学生端
   
     ```bash
     total $作业总数 tasks
-    [1] [ID: $课程作业编号] [Name: $课程作业名称] [StartTime: $开始时间] [EndTime: $截止时间]
+    [1] [ID: $课程作业编号] [Name: $课程作业名称] [Status: undone/done] [StartTime: $开始时间] [EndTime: $截止时间]
     ...
     ```
+
+    - Example
+
+      ```bash
+      total 2 tasks
+      [1] [ID: T212101] [Name: LAB01.md] [Status: done] [StartTime: 2022-09-08-19:00:00] [EndTime: 2022-09-22-18:59:59]
+      [2] [ID: T212102] [Name: LAB02.md] [Status: undone] [StartTime: 2022-09-15-19:00:00] [EndTime: 2022-09-29-18:59:59]
+      ```
+
+    - 补充：作业已经提交过，则状态为`done`，否则为`undone`，提交命令见[提交课程作业](#提交课程作业)
 
 - 失败输出
   - 当参数数量不正确时，输出：
@@ -791,7 +902,7 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
 | `addAnswer` | `[答案路径地址]` | `课程作业编号` | `[<]` | `[答案路径地址]` |
 
 - 使用对象：**管理端**
-- 功能：为指定作业添加答案，答案需要保存到 `./$课程编号/answer/` 文件夹下（需要复制路径地址的文件到指定文件夹下），并重命名为 `$课程作业编号.ans`
+- 功能：为指定作业添加答案，答案需要保存到 `./$课程编号/answer/` 文件夹下（需要复制路径地址的文件到指定文件夹下），并重命名为 `$课程作业编号.ans`，重复添加答案时，覆盖原有答案
 - 前置条件：已登录、已选择课程
 - 简化条件：同[提交课程作业](#提交课程作业)
 - 限制：同[提交课程作业](#提交课程作业)
@@ -801,6 +912,35 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
   ```bash
   add answer success
   ```
+
+  - Example
+
+    ```bash
+    $ openFile ans.txt
+    B
+    B
+    C
+    $ addAnswer ans.txt T212101
+    add answer success
+    $ # 这里省略执行了登出命令并登录了所在课程下的学生账号
+    $ openFile < 1.md
+    B
+    A
+    C
+    $ submitTask T212101 < 1.md
+    submit success
+    your score is: 66.7
+    $ # 这里假定同学经过思考后修改了答案
+    $ openFile < 1.md
+    B
+    B
+    C
+    $ submitTask T212101 < 1.md
+    task already exists, do you want to overwrite it? (y/n)
+    y
+    submit success
+    your score is: 100.0
+    ```
 
 - 失败输出
   - 当使用了重定向时缺失重定向文件路径，输出：
@@ -929,9 +1069,9 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
 
    输入： `login 19375030 123456 haha` 和 `login 19375030` 都对应着 `arguments illegal`
 
-   当**命令有定义，参数个数正确**时，才会输出 `Bye~` 或者 `user id illegal` 等成功或失败输出。
+   当**命令有定义，参数个数正确**时，才会输出 `Bye~` 或者 `user id illegal` 等成功或失败输出
 
-   当一句命令存在多种非法情况，按上述顺序只输出最先发生的非法信息。
+   当一句命令存在多种非法情况，按上述顺序只输出最先发生的非法信息
 
    例如，注册时学号和姓名均非法，按上述顺序，输出 `user id illegal`，而不是`user name illegal`
 
@@ -953,10 +1093,8 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
        └─judge.yaml
    ```
 
-   提交代码时，请保持以上目录结构。
+   提交代码时，请保持以上目录结构
 
    不要使用word，vsc等软件修改文件，可能会导致格式混乱。
 
 6. 请注意：PatPat仅支持单个Scanner对象，使用Scanner读入文件可能导致测评结果错误，请采用其他方式读入！
-
-## 简单测试样例
