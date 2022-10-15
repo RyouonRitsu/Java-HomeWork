@@ -770,19 +770,19 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
     ```
 
 - 特殊情况
-  当作业已经存在时，先询问：
+  - 当作业已经存在时，先询问：
 
-  ```bash
-  task already exists, do you want to overwrite it? (y/n)
-  ```
+    ```bash
+    task already exists, do you want to overwrite it? (y/n)
+    ```
 
-  对于输入的非 `yY\n` 的字符，认为是 `n`，输出：
+  - 对于输入的非 `yY\n` 的字符，认为是 `n`，输出：
 
-  ```bash
-  submit canceled
-  ```
+    ```bash
+    submit canceled
+    ```
 
-  否则**进行文件操作**，然后给出成功/文件操作失败输出
+    否则**进行文件操作**，然后给出成功/文件操作失败输出
 
 ### 添加作业答案
 
