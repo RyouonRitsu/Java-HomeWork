@@ -911,28 +911,54 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
 
 1. 当输入的命令未定义时，输出
 
-    ```bash
-    command '命令' not found
-    ```
+   ```bash
+   command '命令' not found
+   ```
 
-    例如： 输入： `loggin 19375030 123456`
+   例如： 输入： `loggin 19375030 123456`
 
-    由于命令 loggin 未定义，所以输出 `command 'loggin' not found`
+   由于命令 loggin 未定义，所以输出 `command 'loggin' not found`
 
 2. 若以上[功能描述](#功能描述)中有**明确给出输出顺序**，则以它为准
 3. 若不满足第二条，则保持原输出顺序不改变
 4. 当输入的命令有定义，但是参数的个数不合法要求时，输出
 
-    ```bash
-    arguments illegal
-    ```
+   ```bash
+   arguments illegal
+   ```
 
-    输入： `login 19375030 123456 haha` 和 `login 19375030` 都对应着 `arguments illegal`
+   输入： `login 19375030 123456 haha` 和 `login 19375030` 都对应着 `arguments illegal`
 
-    当**命令有定义，参数个数正确**时，才会输出 `Bye~` 或者 `user id illegal` 等成功或失败输出。
+   当**命令有定义，参数个数正确**时，才会输出 `Bye~` 或者 `user id illegal` 等成功或失败输出。
 
-    当一句命令存在多种非法情况，按上述顺序只输出最先发生的非法信息。
+   当一句命令存在多种非法情况，按上述顺序只输出最先发生的非法信息。
 
-    例如，注册时学号和姓名均非法，按上述顺序，输出 `user id illegal`，而不是`user name illegal`
+   例如，注册时学号和姓名均非法，按上述顺序，输出 `user id illegal`，而不是`user name illegal`
+
+5. 评测时，请将所有文件放到patpat可执行文件相同路径下。例如：
+
+   ```bash
+   MySCS\example
+   │  LAB1.md
+   │  Lesson1.txt
+   │  19376054.task
+   │  T191743.ans
+   │  patpat-windows-amd64.exe
+   │
+   ├─3-学号-姓名
+   │  ├─out
+   │  └─src
+   │       Test.java
+   │
+   └─test
+         test.yaml
+         judge.yaml
+   ```
+
+   提交代码时，请保持以上目录结构。
+
+   不要使用word，vsc等软件修改文件，可能会导致格式混乱。
+
+6. 请注意：PatPat仅支持单个Scanner对象，使用Scanner读入文件可能导致测评结果错误，请采用其他方式读入！
 
 ## 简单测试样例
