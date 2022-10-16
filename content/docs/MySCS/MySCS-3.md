@@ -722,7 +722,7 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
       please input the path to redirect the file
       ```
 
-    - 当同时使用可选参数1并写入/追加写入重定向路径，且两者路径相同时，输出：
+    - 当**可选参数1和重定向同时使用**，且**两者路径相同**时，输出：
 
       ```bash
       input file is output file
