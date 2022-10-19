@@ -29,7 +29,7 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
 
    由于命令 loggin 未定义，所以输出 `command 'loggin' not found`
 
-   本着不让客户感到迷惑的原则，本次所有命令都明确了命令的**使用对象**，若使用者**不在使用对象范围内**（譬如学生使用管理端命令，老师使用学生端命令等均属于此类情况，同时，也提示了你必须要等到登录后才能对此情况做判断，如果未登录仍然会提示请先登录），则该命令对此对象**不可见**，相当于未定义，直接**输出 `command '$命令' not found`**，其中 `$命令` 是一个变量，实际输出时替换为命令本身
+   本着不让用户感到迷惑的原则，本次所有命令都明确了命令的**使用对象**，若使用者**不在使用对象范围内**（譬如学生使用管理端命令，老师使用学生端命令等均属于此类情况，同时，也提示了你必须要等到登录后才能对此情况做判断，如果未登录仍然会提示请先登录），则该命令对此对象**不可见**，相当于未定义，直接**输出 `command '$命令' not found`**，其中 `$命令` 是一个变量，实际输出时替换为命令本身
 2. 若以下[功能描述](#功能描述)中有**明确给出输出顺序**，则以它为准
 3. 若不满足第二条，则保持原输出顺序不改变
 4. 当输入的命令有定义，但是参数的个数不合法要求时，输出
@@ -89,9 +89,7 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
 | --- | --- | --- |
 | 修改 | `listCourse` | [列出所有课程](#列出所有课程) |
 | 修改 | `selectCourse 课程编号` | [选择课程](#选择课程) |
-| 新增 | `queryStatus` | [查询当前状态](#查询当前状态) |
-| 新增 | `queryTeacher` | [查询老师](#查询老师) |
-| 新增 | `queryAssistant` | [查询助教](#查询助教) |
+| 修改 | `listAdmin` | [列出课程管理端成员](#列出课程管理端成员) |
 | 修改 | `addWare 资料编号 资料路径地址 [[资料编号 资料路径地址]...]` | [添加课程资料](#添加课程资料) |
 | 修改 | `removeWare 资料编号` | [移除课程资料](#移除课程资料) |
 | 修改 | `listWare` | [列出课程资料](#列出课程资料) |
@@ -230,107 +228,35 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
 
 > Hint：在退出登录时注意清空当前选择课程。
 
-### 查询当前状态
+### 列出课程管理端成员
 
 | 命令 |
 | --- |
-| `queryStatus` |
+| `listAdmin` |
 
 - 使用对象：**所有人**
-- 功能：查询当前用户的状态
-- 前置条件：无
-
-- 成功输出
-  - 用户未登录时，输出：
-
-    ```bash
-    login status: false
-    role: none
-    ```
-
-  - 用户已登录但未选择课程时，输出：
-
-    ```bash
-    login status: true
-    username: ${名} ${姓}
-    role: $角色
-    selected course: none
-    ```
-
-  - 用户已登录且已选择课程时，输出：
-
-    ```bash
-    login status: true
-    username: ${名} ${姓}
-    role: $角色
-    selected course: [$课程编号: $课程名称]
-    ```
-
-  - Example
-
-    ```bash
-    $ queryStatus
-    login status: false
-    role: none
-    $ login 19375030 a7ki7kibangbang
-    Hello Xinlei~
-    $ queryStatus
-    login status: true
-    username: Xinlei Bao
-    role: student
-    selected course: none
-    $ selectCourse C2021
-    select course success
-    $ queryStatus
-    login status: true
-    username: Xinlei Bao
-    role: student
-    selected course: [C2021: oop_spring]
-    ```
-
-  **注意**： `$角色` 为 `teacher` 、 `assistant` 或 `student` 中的一种，显然地， `changeRole` 命令会变更 `$角色` 的状态。
-
-- 失败输出
-  - 当参数数量不正确时，输出：
-
-    ```bash
-    arguments illegal
-    ```
-
-### 查询老师
-
-| 命令 |
-| --- |
-| `queryTeacher` |
-
-- 使用对象：**助教端**、**学生端**
-- 功能：查询当前课程的所有老师信息
+- 功能：查询当前课程的所有管理员信息，包括老师和助教
 - 前置条件：已登录、已选择课程
 
 - 成功输出
   
   ```bash
-  total $老师总数 teachers
-  [1] [Name: ${名} ${姓}] [Email: $邮箱]
-  ---
-  [2] [Name: ${名} ${姓}] [Email: $邮箱]
-  [3] [Name: ${名} ${姓}] [Email: $邮箱]
+  total $管理员总数 administrators
+  [1] [ID: $学工号] [Name: ${名} ${姓}] [Role: $角色] [Email: $邮箱]
+  [2] [ID: $学工号] [Name: ${名} ${姓}] [Role: $角色] [Email: $邮箱]
   ...
   ```
 
-  **注意**：课程创建者总是处在首位，并与其他管理员老师使用 `---` 分隔开，其余管理员老师的顺序按照 `Name` 作为一个整体字符串的字典序排序，同名顺序按照添加的先后顺序输出，**评测保证不会出现同名老师**。
+  **注意**：按照 `ID` 字符串的字典序排序输出，特殊的是，当**学生使用此功能**时，为了保护老师和助教的信息安全，需**隐去学工号**，即输出：
 
-  - Example
+  ```bash
+  total $管理员总数 administrators
+  [1] [Name: ${名} ${姓}] [Role: $角色] [Email: $邮箱]
+  [2] [Name: ${名} ${姓}] [Role: $角色] [Email: $邮箱]
+  ...
+  ```
 
-    ```bash
-    $ selectCourse C2121
-    select course success
-    $ queryTeacher
-    total 2 teachers
-    [1] [Name: Xueping Shen] [Email: xueping@buaa.edu.cn]
-    ---
-    [2] [Name: Xiang Gao] [Email: gaoxiang@buaa.edu.cn]
-    ```
+  顺序不变
 
 - 失败输出
   - 当参数数量不正确时，输出：
@@ -352,76 +278,12 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
     ```
 
 - 特殊情况
-  当课程中有且仅有一个老师时，输出：
+  当课程中有且仅有一个管理员时，第一行输出变更为：
 
   ```bash
-  total 1 teacher
-  [1] [Name: ${名} ${姓}] [Email: $邮箱]
+  total 1 administrator
   ```
   
-### 查询助教
-
-| 命令 |
-| --- |
-| `queryAssistant` |
-
-- 使用对象：**老师端**、**学生端**
-- 功能：查询当前课程的所有助教信息
-- 前置条件：已登录、已选择课程
-
-- 成功输出
-  
-  ```bash
-  total $助教总数 assistants
-  [1] [Name: ${名} ${姓}] [Email: $邮箱]
-  ...
-  ```
-
-  **注意**：助教的顺序按照 `Name` 作为一个整体字符串的字典序排序，同名顺序按照添加的先后顺序输出，**评测保证不会出现同名助教**。
-
-  - Example
-
-    ```bash
-    $ selectCourse C2121
-    select course success
-    $ queryAssistant
-    total 2 assistants
-    [1] [Name: Hongxi Zhou] [Email: 19376054@buaa.edu.cn]
-    [2] [Name: Yixiao Li] [Email: 20373252@buaa.edu.cn]
-    ```
-
-- 失败输出
-  - 当参数数量不正确时，输出：
-
-    ```bash
-    arguments illegal
-    ```
-
-  - 当系统目前没有用户登录时，输出：
-  
-    ```bash
-    please login first
-    ```
-
-  - 当系统目前没有用户选择课程时，输出：
-  
-    ```bash
-    please select course first
-    ```
-
-- 特殊情况
-  - 当课程中没有助教时，输出：
-  
-    ```bash
-    total 0 assistant
-    ```
-
-  - 当课程中有且仅有一个助教时，输出第一行变更为：
-
-    ```bash
-    total 1 assistant
-    ```
-
 ### 添加课程资料
 
 | 命令 | 参数1 | 参数2 | 可选参数3 | 可选参数4 | ... |
