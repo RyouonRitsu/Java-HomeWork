@@ -1,5 +1,5 @@
 ---
-weight: 202
+weight: 203
 math: true
 ---
 
@@ -245,7 +245,7 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
 
     ```bash
     login status: false
-    permission: none
+    role: none
     ```
 
   - 用户已登录但未选择课程时，输出：
@@ -253,7 +253,7 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
     ```bash
     login status: true
     username: ${名} ${姓}
-    permission: $权限
+    role: $角色
     selected course: none
     ```
 
@@ -262,7 +262,7 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
     ```bash
     login status: true
     username: ${名} ${姓}
-    permission: $权限
+    role: $角色
     selected course: [$课程编号: $课程名称]
     ```
 
@@ -271,24 +271,24 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
     ```bash
     $ queryStatus
     login status: false
-    permission: none
+    role: none
     $ login 19375030 a7ki7kibangbang
     Hello Xinlei~
     $ queryStatus
     login status: true
     username: Xinlei Bao
-    permission: student
+    role: student
     selected course: none
     $ selectCourse C2021
     select course success
     $ queryStatus
     login status: true
     username: Xinlei Bao
-    permission: student
+    role: student
     selected course: [C2021: oop_spring]
     ```
 
-  **注意**： `$权限` 为 `teacher` 、 `assistant` 或 `student` 中的一种，显然地， `changeRole` 命令会变更 `$权限` 的状态。
+  **注意**： `$角色` 为 `teacher` 、 `assistant` 或 `student` 中的一种，显然地， `changeRole` 命令会变更 `$角色` 的状态。
 
 - 失败输出
   - 当参数数量不正确时，输出：
