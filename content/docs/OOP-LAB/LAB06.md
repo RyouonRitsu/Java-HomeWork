@@ -376,7 +376,7 @@ ShapeFactories.makeShape 也是策略模式的应用。
 
 实现一个满足如下需求的 `interface ICommand`：
 
-- 具有方法 `void excute()`
+- 具有方法 `void execute()`
 
 利用 `interface ICommand`，实现如下四个具体命令类：
 
@@ -409,7 +409,7 @@ public static void main(String[] args) {
     executor2.add(new BuyBeer(bar, 2));
     executor2.add(new SpendMoney(engineer1, 50));
     executor2.add(new SpendMoney(engineer2, 50));
-    executor1.run();
+    executor2.run();
 }
 
 ```
