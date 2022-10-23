@@ -45,12 +45,11 @@ MySCS分为管理端（老师端和助教端）和学生端，可以实现传统
 change into Student success addWare 资料编号 资料名称 添加课程资料（老师端） add ware success removeWare 资料编号 移除课程资料（老师端） remove ware success listWare 列出课程资料（管理端） [ID:课程资料编号] [Name:课程资料名称] addTask 作业编号 作业名称 作业开始时间 作业截至时间 添加课程作业（管理端） add task success removeTask 作业编号 移除课程作业（管理端） remove task success listTask 列出课程作业（管理端） [ID:课程作业编号] [Name:课程作业名称] [ReceiveNum:接收作业份数] [StartTime:开始时间] [EndTime:截止时间] addStudent 学工号 学工号 &amp;hellip; 添加课程学生（管理端） add student success removeStudent 学工号 移除课程学生（管理端） remove student success listStudent 列出课程学生（管理端） [ID:学工号] [Name:姓 名] [Email:电子邮箱] 功能描述 # 0.</description></item><item><title/><link>https://ryouonritsu.github.io/Java-HomeWork/docs/MySCS/MySCS-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ryouonritsu.github.io/Java-HomeWork/docs/MySCS/MySCS-3/</guid><description>MySCS-3 # 同学们，在上一次的迭代中，我们已经完成了管理端的命令开发，接下来我们需要完成学生端的命令了。
 编写好的代码需要使用patpat进行评测，AC后即可上传到云平台以完成本次的实验内容。希望大家认真且保质保量的完成，请勿抄袭，如有发现抄袭现象将取消迭代作业成绩。
 题目背景 # 软件学院云平台（青春版），即MySCS，是一款更加轻量化的命令行操作的云平台，屏幕前的你拥有完全的自主知识产权，有极大的使用价值和收藏价值。本平台模拟一台操作机上的命令行，所有操作均在本地进行，不支持联网操作，同一时间的使用者有且仅有一个。
-MySCS分为管理端（老师端和助教端）和学生端，可以实现传统的scs的大部分功能。本次迭代需要完成的内容为学生端命令的开发，请直接基于AC后的MySCS-2代码编写，否则发生的异常情况助教概不负责。
-作为你们迭代作业的甲方，助教在这次的迭代中修改了部分输出格式，同时也为部分之前的命令增添了新的功能，相信作为优秀乙方的你们一定能很好的完成甲方的需求的吧~
+MySCS分为管理端（老师端和助教端）和学生端，可以实现传统的scs的大部分功能。本次迭代需要完成的内容为学生端命令的开发，请尽可能直接基于AC后的MySCS-2代码编写，否则可能发生其他异常情况，另外注意此前迭代AC了也不能确保你的程序是完全正确的。
+注意在这次的迭代中修改了部分输出格式，同时也为部分之前的命令增添了新的功能。
 整体约束 # 当输入的命令未定义时，输出
 command &amp;#39;$命令&amp;#39; not found 例如： 输入 loggin 19375030 123456
 由于命令 loggin 未定义，所以输出 command 'loggin' not found
-本着不让用户感到迷惑的原则，本次所有命令都明确了命令的使用对象，若使用者不在使用对象范围内（譬如学生使用管理端命令，老师使用学生端命令等均属于此类情况，同时，也提示了你必须要等到登录后才能对此情况做判断，如果未登录仍然会提示请先登录），则该命令对此对象不可见，相当于未定义，直接输出 command '$命令' not found，其中 $命令 是一个变量，实际输出时替换为命令本身
 若以下 功能描述中有明确给出输出顺序，则以它为准
 若不满足第二条，则保持原输出顺序不改变
 当输入的命令有定义，但是参数的个数不合法要求时，输出
@@ -59,7 +58,7 @@ arguments illegal 输入： login 19375030 123456 haha 和 login 19375030 都对
 当一句命令存在多种非法情况，按上述顺序只输出最先发生的非法信息
 例如，注册时学号和姓名均非法，按上述顺序，输出 user id illegal，而不是user name illegal
 评测时，请将所有文件放到patpat可执行文件相同路径下。例如：
-MySCS\example ├─LAB1.md ├─Lesson1.</description></item><item><title/><link>https://ryouonritsu.github.io/Java-HomeWork/docs/Q-A/%E7%AC%AC%E4%B8%80%E6%9C%9F/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ryouonritsu.github.io/Java-HomeWork/docs/Q-A/%E7%AC%AC%E4%B8%80%E6%9C%9F/</guid><description>OOP实验猪脚说——第一期 # 前言 # 因为同学们的共性问题非常多，所以各位助教（猪脚）总结并写了下来方便各位查阅，不定期更新，希望能帮到大家。
+MySCS\example ├─LAB1.md ├─Lesson1.txt ├─19376054.task ├─T191743.ans ├─patpat.exe ├─3-学号-姓名 │ ├─out │ └─src │ └─Test.</description></item><item><title/><link>https://ryouonritsu.github.io/Java-HomeWork/docs/Q-A/%E7%AC%AC%E4%B8%80%E6%9C%9F/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ryouonritsu.github.io/Java-HomeWork/docs/Q-A/%E7%AC%AC%E4%B8%80%E6%9C%9F/</guid><description>OOP实验猪脚说——第一期 # 前言 # 因为同学们的共性问题非常多，所以各位助教（猪脚）总结并写了下来方便各位查阅，不定期更新，希望能帮到大家。
 迭代实验 # 前置步骤 # Windows用户 # 下载群内提供的patpat示例教程.zip并解压，使用方式在其中的README.md中有详细说明。为了防止大家懒得看，也可以看接下来的步骤；
 patpat-windows-amd64.exe需要重新命名为patpat.exe；
 在patpat示例教程下打开终端（命令行）运行如下命令：
