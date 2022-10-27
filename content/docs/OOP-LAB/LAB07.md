@@ -39,25 +39,25 @@ math: true
 
 ```java
 class Outer {
-  public int num = 10;
+    public int num = 10;
 
-  class Inner {
- public int num = 20;
+    class Inner {
+        public int num = 20;
 
- public void show() {
-   int num = 30;
-   System.out.println(/*???*/);
-   System.out.println(/*???*/);
-   System.out.println(/*???*/);
- }
-  }
+        public void show() {
+            int num = 30;
+            System.out.println(/*???*/);
+            System.out.println(/*???*/);
+            System.out.println(/*???*/);
+        }
+    }
 }
 
 public class Test {
-  public static void main(String[] args) {
- Outer.Inner oi = /*???*/;
- oi.show();
-  }
+    public static void main(String[] args) {
+        Outer.Inner oi = /*???*/;
+        oi.show();
+    }
 }
 ```
 
@@ -72,17 +72,17 @@ public class Test {
 
 ```java
 interface Inter {
-  void show();
+    void show();
 }
 
 class Outer {
-  /*???*/
+    /*???*/
 }
 
 public class Test {
-  public static void main(String[] args) {
- Outer.method().show();
-  }
+    public static void main(String[] args) {
+        Outer.method().show();
+    }
 }
 ```
 
