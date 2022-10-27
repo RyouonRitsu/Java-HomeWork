@@ -28,26 +28,26 @@ math: true
 ```java
 // Test.java
 class PrivateOverride {
-  private void f() {
- System.out.println("private f()");
-  }
+    private void f() {
+        System.out.println("private f()");
+    }
 
-  public static void main(String[] args) {
- PrivateOverride po = new Derived();
- po.f();
-  }
+    public static void main(String[] args) {
+       PrivateOverride po = new Derived();
+       po.f();
+    }
 }
 
 class Derived extends PrivateOverride {
-  public void f() {
- System.out.println("public f()");
-  }
+    public void f() {
+       System.out.println("public f()");
+    }
 }
 
 public class Test {
-  public static void main(String[] args) {
- PrivateOverride.main(args);
-  }
+    public static void main(String[] args) {
+       PrivateOverride.main(args);
+    }
 }
 ```
 
@@ -65,35 +65,35 @@ private 方法被默认是 final 的
 ```java
 // Test.java
 class Super {
-  public int field = 0;
+    public int field = 0;
 
-  public int getField() {
- return field;
-  }
+    public int getField() {
+       return field;
+    }
 }
 
 class Sub extends Super {
-  public int field = 1;
+    public int field = 1;
 
-  public int getField() {
- return field;
-  }
+    public int getField() {
+       return field;
+    }
 
-  public int getSuperField() {
- return super.field;
-  }
+    public int getSuperField() {
+       return super.field;
+    }
 }
 
 public class Test {
-  public static void main(String[] args) {
- Super sup = new Sub(); // Upcast
- System.out.println("sup.field = " + sup.field +
-   ", sup.getField() = " + sup.getField());
- Sub sub = new Sub();
- System.out.println("sub.field = " + sub.field +
-   ", sub.getField() = " + sub.getField() +
-   ", sub.getSuperField() = " + sub.getSuperField());
-  }
+    public static void main(String[] args) {
+       Super sup = new Sub(); // Upcast
+       System.out.println("sup.field = " + sup.field +
+         ", sup.getField() = " + sup.getField());
+       Sub sub = new Sub();
+       System.out.println("sub.field = " + sub.field +
+         ", sub.getField() = " + sub.getField() +
+         ", sub.getSuperField() = " + sub.getSuperField());
+    }
 }
 ```
 
@@ -107,31 +107,31 @@ public class Test {
 ```java
 // Test.java
 class StaticSuper {
-  public static String staticGet() {
- return "Base staticGet()";
-  }
+    public static String staticGet() {
+       return "Base staticGet()";
+    }
 
-  public String dynamicGet() {
- return "Base dynamicGet()";
-  }
+    public String dynamicGet() {
+       return "Base dynamicGet()";
+    }
 }
 
 class StaticSub extends StaticSuper {
-  public static String staticGet() {
- return "Derived staticGet()";
-  }
+    public static String staticGet() {
+       return "Derived staticGet()";
+    }
 
-  public String dynamicGet() {
- return "Derived dynamicGet()";
-  }
+    public String dynamicGet() {
+       return "Derived dynamicGet()";
+    }
 }
 
 public class Test {
-  public static void main(String[] args) {
- StaticSuper sup = new StaticSub(); // Upcast
- System.out.println(StaticSuper.staticGet());
- System.out.println(sup.dynamicGet());
-  }
+    public static void main(String[] args) {
+       StaticSuper sup = new StaticSub(); // Upcast
+       System.out.println(StaticSuper.staticGet());
+       System.out.println(sup.dynamicGet());
+    }
 }
 ```
 
@@ -145,34 +145,34 @@ public class Test {
 ```java
 // Test.java
 class A {
-  void draw() {
- System.out.println("A.draw()");
-  }
+    void draw() {
+       System.out.println("A.draw()");
+    }
 
-  A() {
- System.out.println("A() before draw()");
- draw();
- System.out.println("A() after draw()");
-  }
+    A() {
+       System.out.println("A() before draw()");
+       draw();
+       System.out.println("A() after draw()");
+    }
 }
 
 class B extends A {
-  private int b = 1;
+    private int b = 1;
 
-  B(int b) {
- this.b = b;
- System.out.println("B(), b = " + this.b);
-  }
+    B(int b) {
+       this.b = b;
+       System.out.println("B(), b = " + this.b);
+    }
 
-  void draw() {
- System.out.println("B.draw(), b = " + this.b);
-  }
+    void draw() {
+       System.out.println("B.draw(), b = " + this.b);
+    }
 }
 
 public class Test {
-  public static void main(String[] args) {
- new B(5);
-  }
+    public static void main(String[] args) {
+       new B(5);
+    }
 }
 ```
 
@@ -208,56 +208,56 @@ public class Test {
 ```java
 // Test.java
 interface I0 {
-  void f(); // 默认是 abstract public 的
+    void f(); // 默认是 abstract public 的
 }
 
 interface I1 {
-  void f();
+    void f();
 }
 
 interface I2 {
-  int a = 2; // 默认是 static public final 的
+    int a = 2; // 默认是 static public final 的
 
-  int f();
+    int f();
 }
 
 interface I3 {
-  int a = 3;
+    int a = 3;
 
-  int f(int i);
+    int f(int i);
 }
 
 interface I4 {
-  void f(int i);
+    void f(int i);
 }
 
 class Test01 implements I0, I1 {
-  @Override
-  void f() {
-  }
+    @Override
+    void f() {
+    }
 }
 
 class Test02 implements I0, I2 {
-  @Override
-  void f() {
-  }
+    @Override
+    void f() {
+    }
 
-  @Override
-  int f() {
- return 0;
-  }
+    @Override
+    int f() {
+       return 0;
+    }
 }
 
 class Test23 implements I2, I3 {
-  @Override
-  int f() {
- return a;
-  }
+    @Override
+    int f() {
+       return a;
+    }
 
-  @Override
-  int f(int i) {
- return i;
-  }
+    @Override
+    int f(int i) {
+       return i;
+    }
 }
 ```
 
