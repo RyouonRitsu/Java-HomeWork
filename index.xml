@@ -20,7 +20,10 @@ Question2. 权限 # 阅读 Code 文件夹中的 Question02 目录，根据你对
 涉及内部类时的初始化过程 内部类能够访问其外部类的所有属性和方法 构造内部类必须先构造外部类对象 嵌套类（静态内部类）只能够访问外部类的静态属性和方法 嵌套类可以直接通过类名构造 匿名内部类和局部内部类中直接使用的外部数据必须是 final 的（除非是匿名类的方法 的参数） 上述这些语法层面的东西，可以尝试自行证明。 本次实验不会涉及以下内部类的常用技巧：
 回调与闭包 事件与控制框架 也不会涉及以下内部类的边角情况：
 内部类的继承与覆盖 多重嵌套的内部类 Question01 InnerClass1 代码填空 # 阅读下面这段代码：
-class Outer { public int num = 10; class Inner { public int num = 20; public void show() { int num = 30; System.out.println(/*???*/); System.out.println(/*???*/); System.out.println(/*???*/); } } } public class Test { public static void main(String[] args) { Outer.</description></item><item><title/><link>https://ryouonritsu.github.io/Java-HomeWork/docs/OOP-LAB/TEMPLATE/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ryouonritsu.github.io/Java-HomeWork/docs/OOP-LAB/TEMPLATE/</guid><description> Lab XX Assignment # 班级：
+class Outer { public int num = 10; class Inner { public int num = 20; public void show() { int num = 30; System.out.println(/*???*/); System.out.println(/*???*/); System.out.println(/*???*/); } } } public class Test { public static void main(String[] args) { Outer.</description></item><item><title/><link>https://ryouonritsu.github.io/Java-HomeWork/docs/OOP-LAB/Lab08/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ryouonritsu.github.io/Java-HomeWork/docs/OOP-LAB/Lab08/</guid><description>Java 程序设计 LAB08 # 实验目的 # 理解集合框架的设计思路
+了解 Java 常用的数据结构类及其使用，重点迭代器(Iterator) 、线性表（List、ArrayList、LinkedList）、HashMap 类、HashSet 类及枚举类在企业级软件编写中经常用到，要求在理解的基础上，熟练掌握
+理解泛型的概念、必要性并能够灵活使用
+实验题目 # Question1 简述ArrayList和LinkedList的区别 简答 # Question2 写出以下程序的输出 简答 # //Animal.java public class Animal { public Animal(){ System.out.println(&amp;#34;I am an animal&amp;#34;); } } //Dog.java public class Dog extends Animal{ public Dog(){ System.out.println(&amp;#34;I am a dog&amp;#34;); } } //AnimalTest.java public class AnimalTest { public &amp;lt;T,S extends T&amp;gt; T testDemo(T t,S s){ System.out.println(&amp;#34;I am type T and my type is &amp;#34;+t.</description></item><item><title/><link>https://ryouonritsu.github.io/Java-HomeWork/docs/OOP-LAB/TEMPLATE/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ryouonritsu.github.io/Java-HomeWork/docs/OOP-LAB/TEMPLATE/</guid><description> Lab XX Assignment # 班级：
 学号：
 姓名：
 提交要求（以下内容在最终提交的作业中可以删除，仅作参考） # 目录格式
