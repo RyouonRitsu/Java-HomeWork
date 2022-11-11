@@ -92,7 +92,7 @@ math: true
 
     > 例如 A 学生在选择了课程 C2101 之后，可通过 requestVM Windows 指令来申请一台 Windows 系统的虚拟机对象。但是他可能用不太习惯，于是就又通过 requestVM Linux 指令来申请一台 Linux 系统的虚拟机对象覆盖掉原有的 Windows 系统。你可以考虑为学生维护一个课程到虚拟机的单值映射，并在该学生选择课程后，在该映射中查找到对应的虚拟机对象（若存在的话）。
     
-- **提示**：可以首先创建一个虚拟机类（接口、抽象类均可）并继承或实现`Serializable`接口（`java.io.Serializable`）。并实现三个子类，分别代表`Windows`, `Linux`, `MacOS`三个系统，你不能通过为某一属性赋值为`Windows`, `Linux`, `MacOS`来标志系统类型。可以考虑使用工厂模式来处理虚拟机创建请求。
+- **提示**：首先创建一个虚拟机类（接口、抽象类均可）并继承或实现`Serializable`接口（`java.io.Serializable`）。并实现三个子类，分别代表`Windows`, `Linux`, `MacOS`三个系统，你不能通过为某一属性赋值为`Windows`, `Linux`, `MacOS`来显式标志系统类型。创建一个虚拟机工厂接口，在课程类中通过匿名内部类来实现该接口，并以此来创建虚拟机对象。
 
 
 
@@ -147,7 +147,7 @@ math: true
 
     此时你还需要在该 Linux 虚拟机对象中保存`aaa`,`bbb`,`ccc`这三条指令作为历史指令。
 
-    > 你或许需要使用 instanceof 或重写方法来获取虚拟机系统类型。
+    > 你或许需要使用 instanceof 来获取虚拟机系统类型。
 
 
 
@@ -216,7 +216,7 @@ math: true
 
 - 在被清空之后或他还未拥有虚拟机时：
 
-```
+```bash
 输入：logVM
 输出：no log
 ```
