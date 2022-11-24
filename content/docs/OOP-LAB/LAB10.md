@@ -84,7 +84,7 @@ System.out.println("判断是否是文件夹："+f.isDirectory());
 一个可能的输出如下：
 
 ```java
-File f = new File("D:\\java");
+File f = new File("./java.oop");
 System.out.println("当前文件是：" +f);
 
 System.out.println("判断是否存在："+f.exists());
